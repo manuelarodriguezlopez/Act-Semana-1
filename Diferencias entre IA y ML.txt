@@ -1,10 +1,30 @@
-Cuales son las diferencias entre la IA y el machine learning?
-
-Que es la IA?.
-
-
-Que es el machine learning?.
-
+¿QUE ES INTELIGENCIA ARTIFICIAL Y MACHINE LEARNING?
+La inteligencia artificial (IA) es una tecnología que permite a las computadoras y 
+máquinas simular el aprendizaje humano, la comprensión, la resolución de problemas, 
+la toma de decisiones, la creatividad y la autonomía.
+Las aplicaciones y dispositivos equipados con IA pueden ver e identificar objetos. 
+Pueden entender y responder al lenguaje humano. Pueden aprender de nueva información y 
+experiencia. Pueden hacer recomendaciones detalladas a usuarios y expertos. 
+Pueden actuar de manera independiente, reemplazando la necesidad de inteligencia o 
+intervención humana (un ejemplo clásico es un automóvil autónomo).
+Las aplicaciones y dispositivos equipados con IA pueden:
+•	Ver e identificar objetos
+•	Entender y responder al lenguaje humano
+•	Aprender de nueva información y experiencia
+•	Hacer recomendaciones detalladas a usuarios y expertos
+•	Actuar de manera independiente, reemplazando la necesidad de inteligencia o 
+    intervención humana
+-----------------------------------------------------------------------------------------
+El Machine Learning o aprendizaje automático es un campo científico y, más particularmente, 
+una subcategoría de inteligencia artificial. Consiste en dejar que los algoritmos descubran 
+«patterns», es decir, patrones recurrentes, en conjuntos de datos. Esos datos pueden ser
+ números, palabras, imágenes, estadísticas, etc.
+Todo lo que se pueda almacenar digitalmente puede servir como dato para el Machine Learning. 
+Al detectar patrones en esos datos, los algoritmos aprenden y mejoran su rendimiento 
+en la ejecución de una tarea específica.
+En resumen, los algoritmos de Machine Learning aprenden de forma autónoma a realizar una 
+tarea o hacer predicciones a partir de datos y mejorar su rendimiento con el tiempo. 
+Una vez entrenado, el algoritmo podrá encontrar los patrones en nuevos datos.
 
 Diferencias clave entre una y Otra.
 
