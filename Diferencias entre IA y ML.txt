@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 Cuales son las diferencias entre la IA y el machine learning?
 
 Que es la IA?.
@@ -5,6 +6,36 @@ Que es la IA?.
 
 Que es el machine learning?.
 
+=======
+¿QUE ES INTELIGENCIA ARTIFICIAL Y MACHINE LEARNING?
+
+    La inteligencia artificial (IA) es una tecnología que permite a las computadoras y 
+    máquinas simular el aprendizaje humano, la comprensión, la resolución de problemas, 
+    la toma de decisiones, la creatividad y la autonomía.
+    Las aplicaciones y dispositivos equipados con IA pueden ver e identificar objetos. 
+    Pueden entender y responder al lenguaje humano. Pueden aprender de nueva información y 
+    xperiencia. Pueden hacer recomendaciones detalladas a usuarios y expertos. 
+    Pueden actuar de manera independiente, reemplazando la necesidad de inteligencia o 
+    intervención humana (un ejemplo clásico es un automóvil autónomo).
+    Las aplicaciones y dispositivos equipados con IA pueden:
+        •	Ver e identificar objetos
+        •	Entender y responder al lenguaje humano
+        •	Aprender de nueva información y experiencia
+        •	Hacer recomendaciones detalladas a usuarios y expertos
+        •	Actuar de manera independiente, reemplazando la necesidad de inteligencia o 
+    intervención humana
+-----------------------------------------------------------------------------------------
+    El Machine Learning o aprendizaje automático es un campo científico y, más particularmente, 
+    una subcategoría de inteligencia artificial. Consiste en dejar que los algoritmos descubran 
+    «patterns», es decir, patrones recurrentes, en conjuntos de datos. Esos datos pueden ser
+     números, palabras, imágenes, estadísticas, etc.
+    Todo lo que se pueda almacenar digitalmente puede servir como dato para el Machine Learning. 
+    Al detectar patrones en esos datos, los algoritmos aprenden y mejoran su rendimiento 
+    en la ejecución de una tarea específica.
+    En resumen, los algoritmos de Machine Learning aprenden de forma autónoma a realizar una 
+    tarea o hacer predicciones a partir de datos y mejorar su rendimiento con el tiempo. 
+    Una vez entrenado, el algoritmo podrá encontrar los patrones en nuevos datos.
+>>>>>>> Stashed changes
 
 Diferencias clave entre una y Otra.
 
@@ -13,25 +44,25 @@ Tipos de Machine Learning.
 
 
 Conclusiones.
-* la diferencia entre inteligencia artificial y machine learning se comprende mejor al observar
-la relacion entra ambos conceptos. 
-la inteligencia artificial es el campo amplio de la informatica
-que tiene como proposito diseñar sistemas capaces de imitar la inteligencia humana,
-tomando desiciones, resolviendo problemas y ejecutando tareas de manera autómata.
-dentro de este gran campo surge el machine learning, una de sus ramas 
-mas relevantes, que se centra en el desarrollo de algoritmos capaces de 
-aprender automaticamente a partir de datos, identificar patrones y mejorar
-su desempeño con la experiencia sin necesidad de ser programados de forma explicita para 
-cada situacion. 
-esto significa que todo lo que pertenece al aprendizaje automatico se considera parte de la 
-inteligencia artificial, pero la IA no se limita unicamente a este enfoque,
-ya que tambien incluye tecnicas y aproximaciones como la logica difusa, los sistemas expertos,
-la vision por computadora o el procesamiento del lenguaje natural.
-en conclusion, mientas la IA representa el objetivo general
-de dotar a las maquinas de una inteligencia similar a la humana, el machine learning
-constituye una de sus principales herramientas para alcanzar 
-dicho objetivo, siendo la encargada de dotar los sistemas de la capacidad 
-de aprender y adaptarse conbase en la informacion disponible.
+    La diferencia entre inteligencia artificial y machine learning se comprende mejor al observar
+    la relacion entra ambos conceptos. 
+    La inteligencia artificial es el campo amplio de la informatica
+    que tiene como proposito diseñar sistemas capaces de imitar la inteligencia humana,
+    tomando desiciones, resolviendo problemas y ejecutando tareas de manera autómata.
+    Dentro de este gran campo surge el machine learning, una de sus ramas 
+    mas relevantes, que se centra en el desarrollo de algoritmos capaces de 
+    aprender automaticamente a partir de datos, identificar patrones y mejorar
+    su desempeño con la experiencia sin necesidad de ser programados de forma explicita para 
+    cada situacion. 
+    Esto significa que todo lo que pertenece al aprendizaje automatico se considera parte de la 
+    inteligencia artificial, pero la IA no se limita unicamente a este enfoque,
+    ya que tambien incluye tecnicas y aproximaciones como la logica difusa, los sistemas expertos,
+    la vision por computadora o el procesamiento del lenguaje natural.
+    En conclusion, mientas la IA representa el objetivo general
+    de dotar a las maquinas de una inteligencia similar a la humana, el machine learning
+    constituye una de sus principales herramientas para alcanzar 
+    dicho objetivo, siendo la encargada de dotar los sistemas de la capacidad 
+    de aprender y adaptarse conbase en la informacion disponible.
 
 Participantes
 Jhonatan David Rivera 
