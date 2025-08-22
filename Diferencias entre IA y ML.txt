@@ -33,6 +33,25 @@ Tipos de Machine Learning.
 
 
 Conclusiones.
+la diferencia entre inteligencia artificial y machine learning se comprende mejor al observar
+la relacion entra ambos concéptos. 
+la inteligencia artificial es el campo amplio de la informática
+que tiene como proposito diseñar sistemas capaces de imitar la inteligencia humana,
+tomando desiciones, resolviendo problemas y ejecutando tareas de manera autómata.
+dentro de este gran campo surge el machine learning, una de sus ramas 
+mas relevantes, que se centra en el desarrollo de algoritmos capaces de 
+aprender automaticamente a partir de datos, identificar patrones y mejorar
+su desempeño con la experiencia sin necesidad de ser programados de forma explicita para 
+cada situación. 
+esto significa que todo lo que pertenece al aprendizaje automatico se considera parte de la 
+inteligencia artificial, pero la IA no se limita unicamente a este enfoque,
+ya que tambien incluye tecnicas y aproximaciones como la logica difusa, los sistemas expertos,
+la vision por computadora o el procesamiento del lenguaje natural.
+en conclusion, mientas la IA representa el objetivo general
+de dotar a las maquinas de una inteligencia similar a la humana, el machine learning
+constituye una de sus principales herramientas para alcanzar 
+dicho objetivo, siendo la encargada de dotar los sistemas de la capacidad 
+de aprender y adaptarse conbase en la informacion disponible.
 
 Participantes
 Jhonatan David Rivera 
