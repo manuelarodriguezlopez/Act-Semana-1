@@ -97,7 +97,11 @@ Conclusiones.
     dicho objetivo, siendo la encargada de dotar los sistemas de la capacidad 
     de aprender y adaptarse conbase en la informacion disponible.
 
-Participantes
-Jhonatan David Rivera 
-Julian Mateo Retavisca Gomez
-Manuela Rodriguez Lopez 
+    Participantes
+    Jhonatan David Rivera 
+    Julian Mateo Retavisca Gomez
+    Manuela Rodriguez Lopez 
+
+    Bibliografia
+    - https://scienceexchange.caltech.edu/topics/artificial-intelligence-research/artificial-intelligence-vs-machine-Learning
+    (Conclusiones)
