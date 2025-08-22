@@ -27,21 +27,31 @@
     Una vez entrenado, el algoritmo podrá encontrar los patrones en nuevos datos.
 
 Diferencias clave entre IA y ML. 
-1. El concepto general y el subcampo: 
-IA: Es un campo amplio de infomacion que imita la inteligancia humana, con aspectos como apremdizaje, creatividad toma de desiciones y autonomia. 
-ML: Es una rama que se encuentra dentro de la IA que se enfoca en algoritmos para detectar diferentes patrones en diferentes datos y aprender de ellos. 
-2. Objetivo principal: 
-IA: El proposito principal es crear sistemas que actuen como humanos que sean capaces de resolver diferentes problemas que sean complejos y que tome decisiones de manera independiente.  
-ML: El objetivo es que los sistemas aprendan de diferentes datos para mejorar un  desempeño en una tarea concreta. 
-3. El alcance de las apliaciones: 
-IA: Vision de computadora, preocesamiento de diferentes lenguajes, robotica, sistemas expertos, agentes autonomos, etc...
-ML: Este se centra en diferentes tareas como puede ser la prediccion, clasifiacion, reconocimiento de patrones y recomendaciones en grandes volumenes de datos. 
-4. Forma de funcionamiento: 
-IA: Esta puede actuar sin la necesidad de datos extremadamente grandes como reglas logicas o sistemas expertos, aunque hoy en dia los datos son muy importantes 
-ML: Este necesita grandes cantidades de datos para entrenar los algoritmos de la IA y encontrar diferentes patrones. 
-5. Ejemplo practico: 
-IA: Un carro autónomo que interpreta señales, toma decisiones en tiempo real y conduce sin intervención humana.
-ML: El algoritmo que analiza millones de imágenes de tránsito para aprender a reconocer una señal de “Pare”.
+    1. El concepto general y el subcampo: 
+    IA: Es un campo amplio de infomacion que imita la inteligancia humana, con aspectos 
+    como apremdizaje, creatividad toma de desiciones y autonomia. 
+    ML: Es una rama que se encuentra dentro de la IA que se enfoca en algoritmos para 
+    detectar diferentes patrones en diferentes datos y aprender de ellos. 
+    2. Objetivo principal: 
+    IA: El proposito principal es crear sistemas que actuen como humanos que sean capaces 
+    de resolver diferentes problemas que sean complejos y que tome decisiones de manera independiente.  
+    ML: El objetivo es que los sistemas aprendan de diferentes datos para mejorar un  
+    desempeño en una tarea concreta. 
+    3. El alcance de las apliaciones: 
+    IA: Vision de computadora, preocesamiento de diferentes lenguajes, robotica, sistemas 
+    expertos, agentes autonomos, etc...
+    ML: Este se centra en diferentes tareas como puede ser la prediccion, clasifiacion, 
+    reconocimiento de patrones y recomendaciones en grandes volumenes de datos. 
+    4. Forma de funcionamiento: 
+    IA: Esta puede actuar sin la necesidad de datos extremadamente grandes como reglas 
+    logicas o sistemas expertos, aunque hoy en dia los datos son muy importantes 
+    ML: Este necesita grandes cantidades de datos para entrenar los algoritmos de la 
+    IA y encontrar diferentes patrones. 
+    5. Ejemplo practico: 
+    IA: Un carro autónomo que interpreta señales, toma decisiones en tiempo real y 
+    conduce sin intervención humana.
+    ML: El algoritmo que analiza millones de imágenes de tránsito para aprender a 
+    reconocer una señal de “Pare”.
 
 Tipos de Machine Learning.
 
