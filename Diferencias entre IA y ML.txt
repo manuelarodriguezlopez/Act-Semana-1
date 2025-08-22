@@ -102,24 +102,25 @@ Se dividen en 5 categorías:
 
 Conclusiones.
     la diferencia entre inteligencia artificial y machine learning se comprende mejor al observar
-    la relacion entra ambos concéptos. 
+    la relación entra ambos conceptos. 
     la inteligencia artificial es el campo amplio de la informática
-    que tiene como proposito diseñar sistemas capaces de imitar la inteligencia humana,
-    tomando desiciones, resolviendo problemas y ejecutando tareas de manera autómata.
+    que tiene como propósito diseñar sistemas capaces de imitar la inteligencia humana,
+    tomando decisiones, resolviendo problemas y ejecutando tareas de manera autómata.
     dentro de este gran campo surge el machine learning, una de sus ramas 
-    mas relevantes, que se centra en el desarrollo de algoritmos capaces de 
-    aprender automaticamente a partir de datos, identificar patrones y mejorar
-    su desempeño con la experiencia sin necesidad de ser programados de forma explicita para 
+    más relevantes, que se centra en el desarrollo de algoritmos capaces de 
+    aprender automáticamente a partir de datos, identificar patrones y mejorar
+    su desempeño con la experiencia sin necesidad de ser programados de forma explícita para 
     cada situación. 
-    esto significa que todo lo que pertenece al aprendizaje automatico se considera parte de la 
-    inteligencia artificial, pero la IA no se limita unicamente a este enfoque,
-    ya que tambien incluye tecnicas y aproximaciones como la logica difusa, los sistemas expertos,
-    la vision por computadora o el procesamiento del lenguaje natural.
-    en conclusion, mientas la IA representa el objetivo general
-    de dotar a las maquinas de una inteligencia similar a la humana, el machine learning
+    esto significa que todo lo que pertenece al aprendizaje automático se considera parte de la 
+    inteligencia artificial, pero la IA no se limita únicamente a este enfoque,
+    ya que también incluye técnicas y aproximaciones como la lógica difusa, los sistemas expertos,
+    la visión por computadora o el procesamiento del lenguaje natural.
+    en conclusión, mientas la IA representa el objetivo general
+    de dotar a las máquinas de una inteligencia similar a la humana, el machine learning
     constituye una de sus principales herramientas para alcanzar 
     dicho objetivo, siendo la encargada de dotar los sistemas de la capacidad 
-    de aprender y adaptarse conbase en la informacion disponible.
+    de aprender y adaptarse con base en la información disponible.
+
 
     Participantes
     Jhonatan David Rivera 
