@@ -101,7 +101,10 @@ Conclusiones.
     Jhonatan David Rivera 
     Julian Mateo Retavisca Gomez
     Manuela Rodriguez Lopez 
+    David Santiago Vanegas 
 
     Bibliografia
     - https://scienceexchange.caltech.edu/topics/artificial-intelligence-research/artificial-intelligence-vs-machine-Learning
     (Conclusiones)
+    -https://www.ibm.com/mx-es/think/topics/artificial-intelligence
+    -https://datascientest.com/es/machine-learning-definicion-funcionamiento-usos
