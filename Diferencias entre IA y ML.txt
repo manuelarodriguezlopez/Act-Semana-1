@@ -123,3 +123,6 @@ Conclusiones.
     -https://www.ibm.com/mx-es/think/topics/artificial-intelligence
     -https://datascientest.com/es/machine-learning-definicion-funcionamiento-usos
     -https://www.ibm.com/es-es/think/topics/machine-learning-types#:~:text=3.,grande%20(a%20veces%20prohibitivo).
+    -https://aws.amazon.com/es/compare/the-difference-between-artificial-intelligence-and-machine-learning/
+    -https://cloud.google.com/learn/artificial-intelligence-vs-machine-learning?hl=es-419
+    
