@@ -21,4 +21,18 @@
 
 
 
-    
+    NUMPY AVANZADO:
+
+    Cuando hablamos de NumPy avanzado, nos   referimos a las características que hacen que NumPy sea mucho más poderoso que una simple librería para crear arreglos. Es entrar en el nivel de optimización, matemáticas y manejo de memoria.
+
+    1-1. Broadcasting
+
+   Significado: NumPy puede operar entre arreglos de distintas dimensiones sin copiarlos.
+
+      Clave: Evita bucles y acelera cálculos.
+
+      Ejemplo: Sumar un vector a cada fila de una matriz automáticamente.
+
+      ![alt text](image.png)
+
+    1-2.
