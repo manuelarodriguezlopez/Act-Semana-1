@@ -96,55 +96,9 @@ ________________________________________________________________________________
           NumPy incluye el submódulo linalg para realizar operaciones de álgebra lineal.
   ![alt text](/imagenes/LinalgAlgebraLineal.jpg)
 
-
 _______________________________________________________________________________________________________
-
-PANDAS Y SUS OPERAACIONES AVANZADAS
-¿QUE ES PANDAS?
-
- Pandas es una librería de Python muy poderosa para el análisis y manipulación de datos.
- Permite trabajar con DataFrames (tablas de datos con filas y columnas) de forma sencilla, similar a Excel o SQL, pero con la potencia de Python.
-
- Con Pandas puedes:
-
- -Limpiar datos (quitar nulos, duplicados, etc.).
-
- -Transformar y organizar información.
-
- -Hacer análisis estadístico.
-
- -Exportar e importar a distintos formatos (CSV, Excel, SQL, JSON).
-
-  *Filtros (Filtering)
-
-Qué es: Seleccionar filas o columnas que cumplen una condición.
-
-Uso: Permite trabajar solo con los datos relevantes.
-
-![alt text](/imagenes/image-1.png)
-
-  *GroupBy
-
-Qué es: Agrupar datos según una o varias columnas y aplicar funciones de agregación.
-
-Uso: Sirve para análisis estadístico, como totales, promedios, conteos.
-
-![alt text](/imagenes/image-2.png)
-
-   *Merge / Join
-
-Qué es: Combinar dos DataFrames según columnas en común (similar a JOIN en SQL).
-
-Uso: Integrar información de distintas tablas en una sola.
-
-![alt text](/imagenes/image-3.pngx)
-
-
-
-
-    1-2.
-_______________________________________________________________________________________________
 C. Pandas, Dataframes y Series
+
 
 En un contexto de manipulacion de datos nos damos cuenta de que es una de las tareas mas importantes de la ciencia de datos, analisis estadistico y la inteligencia artificial. Mientras los conjuntos de datos se vuelven mas grandes y complejos, surge una necesidad de utilizar diferentes herramientas que nos permitan gestionar de una manera mas eficiente, rapida y flexible. 
 
@@ -213,5 +167,71 @@ Ejemplo 2: Selección de columnas.
 Ejemplo 3: Seleccionar varias columnas. 
 
 ![alt text](/imagenes/Ejemplo%203%20Dataframes%20.jpg)
+
+_______________________________________________________________________________________________________
+
+D. PANDAS Y SUS OPERAACIONES AVANZADAS
+¿QUE ES PANDAS?
+
+ Pandas es una librería de Python muy poderosa para el análisis y manipulación de datos.
+ Permite trabajar con DataFrames (tablas de datos con filas y columnas) de forma sencilla, similar a Excel o SQL, pero con la potencia de Python.
+
+ Con Pandas puedes:
+
+ -Limpiar datos (quitar nulos, duplicados, etc.).
+
+ -Transformar y organizar información.
+
+ -Hacer análisis estadístico.
+
+ -Exportar e importar a distintos formatos (CSV, Excel, SQL, JSON).
+
+  *Filtros (Filtering)
+
+Qué es: Seleccionar filas o columnas que cumplen una condición.
+
+Uso: Permite trabajar solo con los datos relevantes.
+
+![alt text](/imagenes/image-1.png)
+![alt text](/imagenes/imagefiltro2.png)
+
+  *GroupBy
+
+Qué es: Agrupar datos según una o varias columnas y aplicar funciones de agregación.
+
+Uso: Sirve para análisis estadístico, como totales, promedios, conteos.
+
+![alt text](/imagenes/image-2.png)
+![alt text](/imagenes/imagegroupby.png)
+
+   *Merge / Join
+
+Qué es: Combinar dos DataFrames según columnas en común (similar a JOIN en SQL).
+
+Uso: Integrar información de distintas tablas en una sola.
+
+![alt text](/imagenes/image-3.pngx)
+![alt text](/imagenes/imagemerge.png)
+
+
+     *Manejo de valores nulos
+
+Qué es: Controlar valores faltantes (NaN).
+
+Uso: Limpiar los datos para análisis más confiables.
+
+![alt text](/imagenes/datoeliminar.png)
+![alt text](/imagenes/imagevalires.png)
+
+  *Exportación / Importación
+
+Qué es: Guardar y leer datos en distintos formatos (CSV, Excel, SQL, JSON).
+
+Uso: Compartir, guardar resultados o cargar información externa.
+
+![alt text](/imagenes/datoimportarrr.png)
+
+
+_______________________________________________________________________________________________
 
 
