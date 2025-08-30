@@ -17,21 +17,61 @@
 ![Importe](./Importe%20de%20Numpy.png)
     en este caso podemos ver que la version que fue importada es la 2.0.2
 
+  los arreglos pueden ser creados a partir de la conversion de una lista o una lista que contenga listas, por ejemplo
+  * my_list = [1, 2, 3]
+  * my_list
+![Listas](/Ejemplo%20de%20listas.png)
 
-__________________________________________________________________
+  mediante el metodo array es posible convertir una lista a un arreglo, con este metodo, podemos tambien asignar el arreglo a un tipo de dato, por otro lado el comando "a.dtipe" nos permite conocer el tipo de datos que tiene el arreglo, ademas podemos mostrar que efectivamente el dato del arreglo "a" fue guardado
+
+  * a = np.array(my_list)
+  * type(a)
+  * a.dtype 
+  * print(a)
+![Tipo](/Tipo%20de%20dato%20e%20impresion.png)
 
 
-    NUMPY AVANZADO:
+_______________________________________________________________________________________________________
 
-    Cuando hablamos de NumPy avanzado, nos   referimos a las características que hacen que NumPy sea mucho más poderoso que una simple librería para crear arreglos. Es entrar en el nivel de optimización, matemáticas y manejo de memoria.
+PANDAS Y SUS OPERAACIONES AVANZADAS
+¿QUE ES PANDAS?
 
-    1-1. Broadcasting
+ Pandas es una librería de Python muy poderosa para el análisis y manipulación de datos.
+ Permite trabajar con DataFrames (tablas de datos con filas y columnas) de forma sencilla, similar a Excel o SQL, pero con la potencia de Python.
 
-   Significado: NumPy puede operar entre arreglos de distintas dimensiones sin copiarlos.
+ Con Pandas puedes:
 
-      Clave: Evita bucles y acelera cálculos.
+ -Limpiar datos (quitar nulos, duplicados, etc.).
 
-      Ejemplo: Sumar un vector a cada fila de una matriz automáticamente.
+ -Transformar y organizar información.
+
+ -Hacer análisis estadístico.
+
+ -Exportar e importar a distintos formatos (CSV, Excel, SQL, JSON).
+
+  *Filtros (Filtering)
+
+Qué es: Seleccionar filas o columnas que cumplen una condición.
+
+Uso: Permite trabajar solo con los datos relevantes.
+
+![alt text](image-1.png)
+
+  *GroupBy
+
+Qué es: Agrupar datos según una o varias columnas y aplicar funciones de agregación.
+
+Uso: Sirve para análisis estadístico, como totales, promedios, conteos.
+
+![alt text](image-2.png)
+
+   *Merge / Join
+
+Qué es: Combinar dos DataFrames según columnas en común (similar a JOIN en SQL).
+
+Uso: Integrar información de distintas tablas en una sola.
+
+![alt text](image-3.png)
 
 ![alt text](image.png)
 
@@ -60,3 +100,4 @@ Caracteristicas principales de las Series:
 -Son importantes para trabajar con listas de datos que requieren una identificacion clara. 
 
 Creacion y manipulacion de Series: 
+
