@@ -14,13 +14,13 @@
     * np.__version__
 
     EJEMPLO 1°
-![Importe](./Importe%20de%20Numpy.png)
+![Importe](./imagenes/Importe%20de%20Numpy.png)
     en este caso podemos ver que la version que fue importada es la 2.0.2
 
   los arreglos pueden ser creados a partir de la conversion de una lista o una lista que contenga listas, por ejemplo
   * my_list = [1, 2, 3]
   * my_list
-![Listas](/Ejemplo%20de%20listas.png)
+![Listas](/imagenes/Ejemplo%20de%20listas.png)
 
   mediante el metodo array es posible convertir una lista a un arreglo, con este metodo, podemos tambien asignar el arreglo a un tipo de dato, por otro lado el comando "a.dtipe" nos permite conocer el tipo de datos que tiene el arreglo, ademas podemos mostrar que efectivamente el dato del arreglo "a" fue guardado
 
@@ -28,7 +28,33 @@
   * type(a)
   * a.dtype 
   * print(a)
-![Tipo](/Tipo%20de%20dato%20e%20impresion.png)
+
+![Tipo](/imagenes/Tipo%20de%20dato%20e%20impresion.png)
+
+* reshape
+  En NumPy, este metodo se utiliza para modificar la estructura dimensional de un arreglo sin cambiar el contenido de sus datos. Matemáticamente, un arreglo puede considerarse como un tensor con cierta cantidad de dimensiones y elementos. La operación de reshape consiste en reconfigurar la distribución de esos elementos en un nuevo espacio de dimensiones, manteniendo constante el número total de elementos.
+
+![Reshape](/imagenes/Ejemplo%20n2.png)
+
+  * concatenar
+    En NumPy, la concatenación se entiende como el proceso de unir dos o más arreglos en uno solo, conservando su estructura pero ampliando su tamaño en alguna de sus dimensiones. Existen principalmente dos formas de realizar esta unión: a lo largo de las filas o a lo largo de las columnas.
+
+    Cuando se concatena en el eje de las filas, lo que ocurre es que los arreglos se apilan uno debajo del otro, generando así un mayor número de filas pero manteniendo el mismo número de columnas. En cambio, cuando la concatenación se hace sobre el eje de las columnas, los arreglos se disponen uno al lado del otro, aumentando el número de columnas pero conservando el número de filas.
+
+    Un aspecto importante es que, para que la concatenación sea posible, los arreglos deben coincidir en todas las dimensiones excepto en aquella en la que se está uniendo. De esta forma, NumPy asegura la coherencia en la estructura del nuevo arreglo creado.
+
+![Concatenar](/imagenes/EJemlpo%20de%20concatenar.png)
+
+  * operaciones basicas
+    En NumPy, las operaciones básicas se refieren a aquellas que pueden aplicarse directamente sobre los arreglos, de forma similar a como se trabaja con números o con expresiones matemáticas. La gran diferencia es que estas operaciones se realizan de manera elemento por elemento, lo que significa que cada posición del arreglo es afectada de forma independiente, pero en paralelo.
+
+    Por ejemplo, cuando se suman dos arreglos del mismo tamaño, lo que ocurre es que cada elemento del primero se combina con el elemento en la misma posición del segundo. Lo mismo sucede con la resta, la multiplicación y la división. Esta capacidad convierte a NumPy en una herramienta muy eficiente, ya que evita el uso de ciclos tradicionales y permite cálculos vectorizados, propios de un tratamiento más matemático y cercano al álgebra lineal.
+
+    Además de estas operaciones aritméticas básicas, NumPy también incorpora funciones matemáticas elementales como la potencia, la raíz cuadrada, el logaritmo o las funciones trigonométricas, las cuales pueden aplicarse directamente sobre los arreglos y devuelven resultados con la misma forma dimensional.
+    
+![OperacionesBasicas](/imagenes/Codigo.png)
+![OperacionesBasicas](/imagenes/ejecucion.png)
+
 
 
 _______________________________________________________________________________________________________
@@ -55,8 +81,7 @@ Qué es: Seleccionar filas o columnas que cumplen una condición.
 
 Uso: Permite trabajar solo con los datos relevantes.
 
-![alt text](image-1.png)
-![alt text](/imagenes/imagefiltro2.png)
+![alt text](/imagenes/image-1.png)
 
   *GroupBy
 
@@ -64,8 +89,7 @@ Qué es: Agrupar datos según una o varias columnas y aplicar funciones de agreg
 
 Uso: Sirve para análisis estadístico, como totales, promedios, conteos.
 
-![alt text](image-2.png)
-![alt text](/imagenes/imagegroupby.png)
+![alt text](/imagenes/image-2.png)
 
    *Merge / Join
 
@@ -73,26 +97,7 @@ Qué es: Combinar dos DataFrames según columnas en común (similar a JOIN en SQ
 
 Uso: Integrar información de distintas tablas en una sola.
 
-![alt text](image-3.png)
-![alt text](/imagenes/imagemerge.png)
-
-  *Manejo de valores nulos
-
-Qué es: Controlar valores faltantes (NaN).
-
-Uso: Limpiar los datos para análisis más confiables.
-
-![alt text](/imagenes/image.png)
-![alt text](/imagenes/imagevalires.png)
-
-  *Exportación / Importación
-
-Qué es: Guardar y leer datos en distintos formatos (CSV, Excel, SQL, JSON).
-
-Uso: Compartir, guardar resultados o cargar información externa.
-
-![alt text](/imagenes/image12.png)
-![alt text](/imagenes/imageimporte.png)
+![alt text](/imagenes/image-3.pngx)
 
 
 
