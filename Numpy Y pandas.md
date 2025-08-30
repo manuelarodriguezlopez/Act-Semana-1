@@ -56,6 +56,7 @@
 ![OperacionesBasicas](/imagenes/ejecucion.png)
 
 
+
 _______________________________________________________________________________________________________
 
 PANDAS Y SUS OPERAACIONES AVANZADAS
@@ -100,4 +101,31 @@ Uso: Integrar información de distintas tablas en una sola.
 
 
 
+![alt text](image.png)
+
+    1-2.
+__________________________________________________________________
+    C. Pandas, Dataframes y Series
+
+En un contexto de manipulacion de datos nos damos cuenta de que es una de las tareas mas importantes de la ciencia de datos, analisis estadistico y la inteligencia artificial. Mientras los conjuntos de datos se vuelven mas grandes y complejos, surge una necesidad de utilizar diferentes herramientas que nos permitan gestionar de una manera mas eficiente, rapida y flexible. 
+
+En este contexto, Pandas se ha convertido en una de las librerias que mas se utilizan en Python. Su nombre proviene de Panel Data (datos en panel). Pandas ofrece estructuras de datos y funciones diseñadas especificamente para trabajar con informacion que esta organizada en diferentes filas y columnas que son similares a hojas de calculo en excel o tablas de bases de datos. 
+
+Ventajas de Pandas: 
+-Cargar y exportar diferentes datos en multiples formatos como : CSV, Excel, JSON, SQL, entre otros. 
+-Nos ofrece estructuras de datos como Series y Dataframes que nos facilitan la organizacion y el analisis de los datos.
+-Facilita la limpieza, transformacion y manipulacion de datos. 
+-Se integra con otras librerias como NumPy, Matplotlib y Scikit-learn, lo que hace que esta herramienta sea indispensable en proyectos de analisis de datos. 
+
+Series en Pandas: 
+Una Serie en pandas es una estructura de datos unidimensionales como numeros, cadenas de texto, valores booleanos, fechas y otro tipo de informaciones. 
+Lo mas importante de las Series en pandas es que cada uno de sus elementos esta asociado a un indice, lo cual funciona como una etiqueta que identifica y da un acceso rapido a cada valor. 
+
+Caracteristicas principales de las Series: 
+-Son unidimensionales. 
+-Cada uno de sus elementos esta ligado a un indice. 
+-Pueden almacenar diferentes tipos de datos. 
+-Son importantes para trabajar con listas de datos que requieren una identificacion clara. 
+
+Creacion y manipulacion de Series: 
 
