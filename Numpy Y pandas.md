@@ -17,8 +17,20 @@
 ![Importe](./Importe%20de%20Numpy.png)
     en este caso podemos ver que la version que fue importada es la 2.0.2
 
+  los arreglos pueden ser creados a partir de la conversion de una lista o una lista que contenga listas, por ejemplo
+  * my_list = [1, 2, 3]
+  * my_list
+![Listas](/Ejemplo%20de%20listas.png)
 
+  mediante el metodo array es posible convertir una lista a un arreglo, con este metodo, podemos tambien asignar el arreglo a un tipo de dato, por otro lado el comando "a.dtipe" nos permite conocer el tipo de datos que tiene el arreglo, ademas podemos mostrar que efectivamente el dato del arreglo "a" fue guardado
 
+  * a = np.array(my_list)
+  * type(a)
+  * a.dtype 
+  * print(a)
+![Tipo](/Tipo%20de%20dato%20e%20impresion.png)
+
+_______________________________________________________________________________________________________
 
 
     NUMPY AVANZADO:
