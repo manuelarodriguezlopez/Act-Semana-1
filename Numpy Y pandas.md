@@ -101,7 +101,6 @@ Uso: Integrar información de distintas tablas en una sola.
 
 
 
-![alt text](image.png)
 
     1-2.
 __________________________________________________________________
