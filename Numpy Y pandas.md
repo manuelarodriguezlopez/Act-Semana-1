@@ -66,6 +66,8 @@ ________________________________________________________________________________
   Además, NumPy cuenta con apoyo para álgebra lineal, con funciones del submódulo linalg que permiten operaciones como multiplicación de matrices, cálculo de determinantes, inversas, entre otras. Estas herramientas pueden combinar funciones para la estadística básica, generación de datos y cálculo matriciado, facilitando el trabajo con datos numéricos en Python.
 
       Operaciones Estadísticas
+          Las funciones estadísticas permiten obtener medidas de tendencia central y dispersión, muy útiles en el análisis de datos.
+
         mean()
           La función `mean()` permite calcular el promedio de los elementos de un arreglo.
   ![alt text](/imagenes/MeanPromedio.jpg)
@@ -80,6 +82,8 @@ ________________________________________________________________________________
 
 
       Funciones avanzadas de generación de datos 
+          NumPy también facilita la creación de secuencias numéricas
+
         arange() 
           Crea un arreglo de valores dentro de un rango definido, con un paso específico.
   ![alt text](/imagenes/ArangeValores.jpg)
@@ -93,8 +97,11 @@ ________________________________________________________________________________
   ![alt text](/imagenes/RandomNumeros.jpg)
 
         Algebra Lineal en NumPy
-          NumPy incluye el submódulo linalg para realizar operaciones de álgebra lineal.
+          NumPy incluye el submódulo linalg para realizar operaciones de álgebra lineal.Esto resulta esencial en ingeniería y machine learning.
+          
   ![alt text](/imagenes/LinalgAlgebraLineal.jpg)
+
+
 
 _______________________________________________________________________________________________________
 C. Pandas, Dataframes y Series
