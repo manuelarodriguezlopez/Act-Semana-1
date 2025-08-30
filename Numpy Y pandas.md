@@ -33,6 +33,46 @@
 
 _______________________________________________________________________________________________________
 
+  B. NumPy – Operaciones estadísticas y funciones avanzadas
+  
+  Las operaciones estadísticas en NumPy incluyen funciones que permiten obtener como resultado indicadores básicos de tendencia central y dispersión con pocas líneas de código. Por otro lado, las funciones avanzadas tales como arange() y linspace() facilitan la generación de secuencias numéricas que son uniformes.
+
+  Además, NumPy cuenta con apoyo para álgebra lineal, con funciones del submódulo linalg que permiten operaciones como multiplicación de matrices, cálculo de determinantes, inversas, entre otras. Estas herramientas pueden combinar funciones para la estadística básica, generación de datos y cálculo matriciado, facilitando el trabajo con datos numéricos en Python.
+
+      Operaciones Estadísticas
+        mean()
+          La función `mean()` permite calcular el promedio de los elementos de un arreglo.
+  ![alt text](/imagenes/MeanPromedio.jpgx)
+
+        std() 
+          La función std() devuelve la desviación estándar, que mide qué tanto se dispersan los valores respecto a la media.
+  ![alt text](/imagenes/StdDesviacion.jpgx)
+
+        sum()
+          La función sum() suma todos los elementos del arreglo.
+  ![alt text](/imagenes/SumElementos.jpgx)
+
+
+      Funciones avanzadas de generación de datos 
+        arange() 
+          Crea un arreglo de valores dentro de un rango definido, con un paso específico.
+  ![alt text](/imagenes/ArangeValores.jpgx)
+        
+        linspace() 
+          Genera valores igualmente espaciados entre un inicio y un fin.
+  ![alt text](/imagenes/LinspaceValores.jpgx)
+        
+        random
+          Permite crear arreglos con números aleatorios. Por ejemplo, valores entre 0 y 1.
+  ![alt text](/imagenes/RandomNumeros.jpgx)
+
+        Algebra Lineal en NumPy
+          NumPy incluye el submódulo linalg para realizar operaciones de álgebra lineal.
+  ![alt text](/imagenes/LinalgAlgebraLineal.jpgx)
+
+
+_______________________________________________________________________________________________________
+
 PANDAS Y SUS OPERAACIONES AVANZADAS
 ¿QUE ES PANDAS?
 
