@@ -68,33 +68,33 @@ ________________________________________________________________________________
       Operaciones Estadísticas
         mean()
           La función `mean()` permite calcular el promedio de los elementos de un arreglo.
-  ![alt text](/imagenes/MeanPromedio.jpgx)
+  ![alt text](/imagenes/MeanPromedio.jpg)
 
         std() 
           La función std() devuelve la desviación estándar, que mide qué tanto se dispersan los valores respecto a la media.
-  ![alt text](/imagenes/StdDesviacion.jpgx)
+  ![alt text](/imagenes/StdDesviacion.jpg)
 
         sum()
           La función sum() suma todos los elementos del arreglo.
-  ![alt text](/imagenes/SumElementos.jpgx)
+  ![alt text](/imagenes/SumElementos.jpg)
 
 
       Funciones avanzadas de generación de datos 
         arange() 
           Crea un arreglo de valores dentro de un rango definido, con un paso específico.
-  ![alt text](/imagenes/ArangeValores.jpgx)
+  ![alt text](/imagenes/ArangeValores.jpg)
         
         linspace() 
           Genera valores igualmente espaciados entre un inicio y un fin.
-  ![alt text](/imagenes/LinspaceValores.jpgx)
+  ![alt text](/imagenes/LinspaceValores.jpg)
         
         random
           Permite crear arreglos con números aleatorios. Por ejemplo, valores entre 0 y 1.
-  ![alt text](/imagenes/RandomNumeros.jpgx)
+  ![alt text](/imagenes/RandomNumeros.jpg)
 
         Algebra Lineal en NumPy
           NumPy incluye el submódulo linalg para realizar operaciones de álgebra lineal.
-  ![alt text](/imagenes/LinalgAlgebraLineal.jpgx)
+  ![alt text](/imagenes/LinalgAlgebraLineal.jpg)
 
 
 _______________________________________________________________________________________________________
