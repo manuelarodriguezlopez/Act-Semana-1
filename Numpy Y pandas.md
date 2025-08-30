@@ -96,7 +96,6 @@ Uso: Compartir, guardar resultados o cargar información externa.
 
 
 
-![alt text](image.png)
 
     1-2.
 __________________________________________________________________
