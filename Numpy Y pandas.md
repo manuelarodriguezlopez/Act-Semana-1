@@ -19,20 +19,47 @@
 
 
 
+PANDAS Y SUS OPERAACIONES AVANZADAS
+
+¿QUE ES PANDAS?
+
+ Pandas es una librería de Python muy poderosa para el análisis y manipulación de datos.
+ Permite trabajar con DataFrames (tablas de datos con filas y columnas) de forma sencilla, similar a Excel o SQL, pero con la potencia de Python.
+
+ Con Pandas puedes:
+
+ -Limpiar datos (quitar nulos, duplicados, etc.).
+
+ -Transformar y organizar información.
+
+ -Hacer análisis estadístico.
+
+ -Exportar e importar a distintos formatos (CSV, Excel, SQL, JSON).
+
+  *Filtros (Filtering)
+
+Qué es: Seleccionar filas o columnas que cumplen una condición.
+
+Uso: Permite trabajar solo con los datos relevantes.
+
+![alt text](image-1.png)
+
+  *GroupBy
+
+Qué es: Agrupar datos según una o varias columnas y aplicar funciones de agregación.
+
+Uso: Sirve para análisis estadístico, como totales, promedios, conteos.
+
+![alt text](image-2.png)
+
+   *Merge / Join
+
+Qué es: Combinar dos DataFrames según columnas en común (similar a JOIN en SQL).
+
+Uso: Integrar información de distintas tablas en una sola.
+
+![alt text](image-3.png)
 
 
-    NUMPY AVANZADO:
 
-    Cuando hablamos de NumPy avanzado, nos   referimos a las características que hacen que NumPy sea mucho más poderoso que una simple librería para crear arreglos. Es entrar en el nivel de optimización, matemáticas y manejo de memoria.
 
-    1-1. Broadcasting
-
-   Significado: NumPy puede operar entre arreglos de distintas dimensiones sin copiarlos.
-
-      Clave: Evita bucles y acelera cálculos.
-
-      Ejemplo: Sumar un vector a cada fila de una matriz automáticamente.
-
-      ![alt text](image.png)
-
-    1-2.
