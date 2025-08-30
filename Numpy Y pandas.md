@@ -59,7 +59,118 @@
 
 _______________________________________________________________________________________________________
 
-PANDAS Y SUS OPERAACIONES AVANZADAS
+  B. NumPy – Operaciones estadísticas y funciones avanzadas
+  
+  Las operaciones estadísticas en NumPy incluyen funciones que permiten obtener como resultado indicadores básicos de tendencia central y dispersión con pocas líneas de código. Por otro lado, las funciones avanzadas tales como arange() y linspace() facilitan la generación de secuencias numéricas que son uniformes.
+
+  Además, NumPy cuenta con apoyo para álgebra lineal, con funciones del submódulo linalg que permiten operaciones como multiplicación de matrices, cálculo de determinantes, inversas, entre otras. Estas herramientas pueden combinar funciones para la estadística básica, generación de datos y cálculo matriciado, facilitando el trabajo con datos numéricos en Python.
+
+      Operaciones Estadísticas
+        mean()
+          La función `mean()` permite calcular el promedio de los elementos de un arreglo.
+  ![alt text](/imagenes/MeanPromedio.jpg)
+
+        std() 
+          La función std() devuelve la desviación estándar, que mide qué tanto se dispersan los valores respecto a la media.
+  ![alt text](/imagenes/StdDesviacion.jpg)
+
+        sum()
+          La función sum() suma todos los elementos del arreglo.
+  ![alt text](/imagenes/SumElementos.jpg)
+
+
+      Funciones avanzadas de generación de datos 
+        arange() 
+          Crea un arreglo de valores dentro de un rango definido, con un paso específico.
+  ![alt text](/imagenes/ArangeValores.jpg)
+        
+        linspace() 
+          Genera valores igualmente espaciados entre un inicio y un fin.
+  ![alt text](/imagenes/LinspaceValores.jpg)
+        
+        random
+          Permite crear arreglos con números aleatorios. Por ejemplo, valores entre 0 y 1.
+  ![alt text](/imagenes/RandomNumeros.jpg)
+
+        Algebra Lineal en NumPy
+          NumPy incluye el submódulo linalg para realizar operaciones de álgebra lineal.
+  ![alt text](/imagenes/LinalgAlgebraLineal.jpg)
+
+_______________________________________________________________________________________________________
+C. Pandas, Dataframes y Series
+
+
+En un contexto de manipulacion de datos nos damos cuenta de que es una de las tareas mas importantes de la ciencia de datos, analisis estadistico y la inteligencia artificial. Mientras los conjuntos de datos se vuelven mas grandes y complejos, surge una necesidad de utilizar diferentes herramientas que nos permitan gestionar de una manera mas eficiente, rapida y flexible. 
+
+En este contexto, Pandas se ha convertido en una de las librerias que mas se utilizan en Python. Su nombre proviene de Panel Data (datos en panel). Pandas ofrece estructuras de datos y funciones diseñadas especificamente para trabajar con informacion que esta organizada en diferentes filas y columnas que son similares a hojas de calculo en excel o tablas de bases de datos. 
+
+Ventajas de Pandas: 
+-Cargar y exportar diferentes datos en multiples formatos como : CSV, Excel, JSON, SQL, entre otros. 
+-Nos ofrece estructuras de datos como Series y Dataframes que nos facilitan la organizacion y el analisis de los datos.
+-Facilita la limpieza, transformacion y manipulacion de datos. 
+-Se integra con otras librerias como NumPy, Matplotlib y Scikit-learn, lo que hace que esta herramienta sea indispensable en proyectos de analisis de datos. 
+
+Series en Pandas: 
+Una Serie en pandas es una estructura de datos unidimensionales como numeros, cadenas de texto, valores booleanos, fechas y otro tipo de informaciones. 
+Lo mas importante de las Series en pandas es que cada uno de sus elementos esta asociado a un indice, lo cual funciona como una etiqueta que identifica y da un acceso rapido a cada valor. 
+
+Caracteristicas principales de las Series: 
+-Son unidimensionales. 
+-Cada uno de sus elementos esta ligado a un indice. 
+-Pueden almacenar diferentes tipos de datos. 
+-Son importantes para trabajar con listas de datos que requieren una identificacion clara. 
+
+Creacion y manipulacion de Series: 
+
+Ejemplo 1: Crear una Serie desde una lista. 
+
+![alt text](/imagenes/Ejemplo%201%20Series%20.jpg)
+ 
+Ejemplo 2: Serie con índices personalizados. 
+
+![alt text](/imagenes/Ejemplo%202%20Series%20.jpg)
+
+Ejemplo 3: Serie a partir de un diccionario. 
+
+![alt text](/imagenes/Ejemplo%203%20Series%20.jpg)
+
+Ejemplo 4: Serie con valores booleanos. 
+
+![alt text](/imagenes/Ejemplo%204%20Series.jpg)
+
+Ejemplo 5: Serie con datos numéricos generados automáticamente. 
+
+![alt text](/imagenes/Ejemplo%205%20Series%20.jpg)
+
+Dataframes en Pandas: 
+El Dataframe es la estructura mas potente y utilizada en Pandas. Es una tabla bidimensional con filas y columnas, donde cada una de las columnas puede contener un tipo de dato distinto.
+Cada fila contiene un indice que la identifica, y cada columna tiene un nombre que permite acceder a los datos de forma sencilla. Esto hace que el Dataframe sea una herrameinta muy importante para el analisis de datos tabulares. 
+
+Caracteristicas principales de Dataframes: 
+-Son bidimensionales. 
+-Cada columna es la realidad de una Serie de Pandas. 
+-Se admiten multiples tipos de datos en diferentes columnas. 
+-Permiten operaciones de seleccion, filtrado, ordenamiento, agrupacion y combinacion de datos. 
+-Pueden cargarse desde diferentes fuentes externas como CSV, Excel o bases de datos. 
+Gracias a los Dataframes, Pandas permite estructurar grandes volumenes de informacion y aplicar sobre ellos operaciones estadisticas, matematicas o de transformacion con muy pocas lineas de codigo. 
+
+Creación y manipulación de DataFrames: 
+
+Ejemplo 1: Crear un DataFrame desde un diccionario. 
+
+![alt text](/imagenes/Ejemplo%201%20Dataframes.jpg)
+
+Ejemplo 2: Selección de columnas. 
+
+![alt text](/imagenes/Ejemplo%202%20Dataframes.jpg)
+
+Ejemplo 3: Seleccionar varias columnas. 
+
+![alt text](/imagenes/Ejemplo%203%20Dataframes%20.jpg)
+
+_______________________________________________________________________________________________________
+
+D. PANDAS Y SUS OPERAACIONES AVANZADAS
 ¿QUE ES PANDAS?
 
  Pandas es una librería de Python muy poderosa para el análisis y manipulación de datos.
@@ -121,28 +232,6 @@ Uso: Compartir, guardar resultados o cargar información externa.
 ![alt text](/imagenes/datoimportarrr.png)
 
 
-__________________________________________________________________
-    C. Pandas, Dataframes y Series
+_______________________________________________________________________________________________
 
-En un contexto de manipulacion de datos nos damos cuenta de que es una de las tareas mas importantes de la ciencia de datos, analisis estadistico y la inteligencia artificial. Mientras los conjuntos de datos se vuelven mas grandes y complejos, surge una necesidad de utilizar diferentes herramientas que nos permitan gestionar de una manera mas eficiente, rapida y flexible. 
-
-En este contexto, Pandas se ha convertido en una de las librerias que mas se utilizan en Python. Su nombre proviene de Panel Data (datos en panel). Pandas ofrece estructuras de datos y funciones diseñadas especificamente para trabajar con informacion que esta organizada en diferentes filas y columnas que son similares a hojas de calculo en excel o tablas de bases de datos. 
-
-Ventajas de Pandas: 
--Cargar y exportar diferentes datos en multiples formatos como : CSV, Excel, JSON, SQL, entre otros. 
--Nos ofrece estructuras de datos como Series y Dataframes que nos facilitan la organizacion y el analisis de los datos.
--Facilita la limpieza, transformacion y manipulacion de datos. 
--Se integra con otras librerias como NumPy, Matplotlib y Scikit-learn, lo que hace que esta herramienta sea indispensable en proyectos de analisis de datos. 
-
-Series en Pandas: 
-Una Serie en pandas es una estructura de datos unidimensionales como numeros, cadenas de texto, valores booleanos, fechas y otro tipo de informaciones. 
-Lo mas importante de las Series en pandas es que cada uno de sus elementos esta asociado a un indice, lo cual funciona como una etiqueta que identifica y da un acceso rapido a cada valor. 
-
-Caracteristicas principales de las Series: 
--Son unidimensionales. 
--Cada uno de sus elementos esta ligado a un indice. 
--Pueden almacenar diferentes tipos de datos. 
--Son importantes para trabajar con listas de datos que requieren una identificacion clara. 
-
-Creacion y manipulacion de Series: 
 
