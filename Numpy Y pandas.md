@@ -76,8 +76,8 @@ Uso: Integrar información de distintas tablas en una sola.
 ![alt text](image.png)
 
     1-2.
-__________________________________________________________________
-    C. Pandas, Dataframes y Series
+_______________________________________________________________________________________________
+C. Pandas, Dataframes y Series
 
 En un contexto de manipulacion de datos nos damos cuenta de que es una de las tareas mas importantes de la ciencia de datos, analisis estadistico y la inteligencia artificial. Mientras los conjuntos de datos se vuelven mas grandes y complejos, surge una necesidad de utilizar diferentes herramientas que nos permitan gestionar de una manera mas eficiente, rapida y flexible. 
 
@@ -100,4 +100,51 @@ Caracteristicas principales de las Series:
 -Son importantes para trabajar con listas de datos que requieren una identificacion clara. 
 
 Creacion y manipulacion de Series: 
+
+Ejemplo 1: Crear una Serie desde una lista. 
+
+![alt text](/imagenes/Ejemplo%201%20Series%20.jpg)
+ 
+Ejemplo 2: Serie con índices personalizados. 
+
+![alt text](/imagenes/Ejemplo%202%20Series%20.jpg)
+
+Ejemplo 3: Serie a partir de un diccionario. 
+
+![alt text](/imagenes/Ejemplo%203%20Series%20.jpg)
+
+Ejemplo 4: Serie con valores booleanos. 
+
+![alt text](/imagenes/Ejemplo%204%20Series.jpg)
+
+Ejemplo 5: Serie con datos numéricos generados automáticamente. 
+
+![alt text](/imagenes/Ejemplo%205%20Series%20.jpg)
+
+Dataframes en Pandas: 
+El Dataframe es la estructura mas potente y utilizada en Pandas. Es una tabla bidimensional con filas y columnas, donde cada una de las columnas puede contener un tipo de dato distinto.
+Cada fila contiene un indice que la identifica, y cada columna tiene un nombre que permite acceder a los datos de forma sencilla. Esto hace que el Dataframe sea una herrameinta muy importante para el analisis de datos tabulares. 
+
+Caracteristicas principales de Dataframes: 
+-Son bidimensionales. 
+-Cada columna es la realidad de una Serie de Pandas. 
+-Se admiten multiples tipos de datos en diferentes columnas. 
+-Permiten operaciones de seleccion, filtrado, ordenamiento, agrupacion y combinacion de datos. 
+-Pueden cargarse desde diferentes fuentes externas como CSV, Excel o bases de datos. 
+Gracias a los Dataframes, Pandas permite estructurar grandes volumenes de informacion y aplicar sobre ellos operaciones estadisticas, matematicas o de transformacion con muy pocas lineas de codigo. 
+
+Creación y manipulación de DataFrames: 
+
+Ejemplo 1: Crear un DataFrame desde un diccionario. 
+
+![alt text](/imagenes/Ejemplo%201%20Dataframes.jpg)
+
+Ejemplo 2: Selección de columnas. 
+
+![alt text](/imagenes/Ejemplo%202%20Dataframes.jpg)
+
+Ejemplo 3: Seleccionar varias columnas. 
+
+![alt text](/imagenes/Ejemplo%203%20Dataframes%20.jpg)
+
 
