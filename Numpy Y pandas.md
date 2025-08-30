@@ -56,6 +56,7 @@ Qué es: Seleccionar filas o columnas que cumplen una condición.
 Uso: Permite trabajar solo con los datos relevantes.
 
 ![alt text](image-1.png)
+![alt text](/imagenes/imagefiltro2.png)
 
   *GroupBy
 
@@ -64,6 +65,7 @@ Qué es: Agrupar datos según una o varias columnas y aplicar funciones de agreg
 Uso: Sirve para análisis estadístico, como totales, promedios, conteos.
 
 ![alt text](image-2.png)
+![alt text](/imagenes/imagegroupby.png)
 
    *Merge / Join
 
@@ -72,6 +74,27 @@ Qué es: Combinar dos DataFrames según columnas en común (similar a JOIN en SQ
 Uso: Integrar información de distintas tablas en una sola.
 
 ![alt text](image-3.png)
+![alt text](/imagenes/imagemerge.png)
+
+  *Manejo de valores nulos
+
+Qué es: Controlar valores faltantes (NaN).
+
+Uso: Limpiar los datos para análisis más confiables.
+
+![alt text](/imagenes/image.png)
+![alt text](/imagenes/imagevalires.png)
+
+  *Exportación / Importación
+
+Qué es: Guardar y leer datos en distintos formatos (CSV, Excel, SQL, JSON).
+
+Uso: Compartir, guardar resultados o cargar información externa.
+
+![alt text](/imagenes/image12.png)
+![alt text](/imagenes/imageimporte.png)
+
+
 
 ![alt text](image.png)
 
