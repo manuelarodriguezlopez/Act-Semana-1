@@ -4,16 +4,30 @@ from flask import render_template
 app= Flask(__name__)
 
 @app.route('/')
-def home():
-    a = None
-    a = "Flask"
-    return "Hello, "+a+"!"
-
-if __name__ =='__main__':
-    app.run(debug=True)
-
-@app.route('/index')
 def index():
     Username = " Mateo"
     return render_template('index2.html',name=Username)
 
+@app.route('/casoUno')
+def casoUno():
+    Username = " Mateo"
+    return render_template('casoUno.html', name=Username)
+
+@app.route('/casoDos')
+def casoDos():
+    Username = " Mateo"
+    return render_template('casoDos.html', name=Username)
+
+@app.route('/casoTres')
+def casoTres():
+    Username = " Mateo"
+    return render_template('casoTres.html', name=Username)
+
+@app.route('/casoCuatro')
+def casoCuatro():
+    Username = " Mateo"
+    return render_template('casoCuatro.html', name=Username)
+
+
+if __name__ =='__main__':
+    app.run(debug=True)
