@@ -16,7 +16,7 @@ def casoUno():
 @app.route('/casoDos')
 def casoDos():
     Username = " Mateo"
-    return render_template('casoDos.html', name=Username)
+    return render_template('casodos.html', name=Username)
 
 @app.route('/casoTres')
 def casoTres():
