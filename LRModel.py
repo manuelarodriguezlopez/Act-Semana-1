@@ -11,7 +11,7 @@ data = {
 
 df = pd.DataFrame(data)
 x = df[["Study Hours"]]
-y = df[["Final Grade"]]
+y = df["Final Grade"]  # Series en lugar de DataFrame
 model = LinearRegression()
 model.fit(x, y)
 
