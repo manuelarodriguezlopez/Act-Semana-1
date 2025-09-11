@@ -4,9 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Conceptos básicos - Regresión Lineal</title>
-  <link 
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
-    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
       background: url("{{ url_for('static', filename='RL.jpg') }}") no-repeat center center fixed;
@@ -29,183 +27,272 @@
     .accordion-body {
       color: #212529;
     }
-    .navbar{
-      background-color: black;
-    }
-    .dropdown-menu {
-      background-color: #212529;
-    }
-    .dropdown-item {
-      color: #fff;
-    }
-    .dropdown-item:hover {
-      background-color: #343a40;
-    }
-    .dropdown-submenu{
-      position: relative
-    }
-    .dropdown-submenu > .dropdown-menu{
-      display:none;
-      top:0;
-      left:100%;
-      margin-top: 3px;
-    }
-    .dropdown-submenu:hover > .dropdown-menu {
-      display: block;
-    }
+    .navbar{ background-color: black; }
+    .dropdown-menu { background-color: #212529; }
+    .dropdown-item { color: #fff; }
+    .dropdown-item:hover { background-color: #343a40; }
+    .dropdown-submenu{ position: relative }
+    .dropdown-submenu > .dropdown-menu{ display:none; top:0; left:100%; margin-top: 3px; }
+    .dropdown-submenu:hover > .dropdown-menu { display: block; }
   </style>
 </head>
 <body>
 
-  <!-- 🔹 Navbar -->
-  <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-    <div class="container-fluid">
-      <button 
-        class="navbar-toggler" 
-        type="button" 
-        data-bs-toggle="collapse" 
-        data-bs-target="#navbarSupportedContent" 
-        aria-controls="navbarSupportedContent" 
-        aria-expanded="false" 
-        aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">Home</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a 
-              class="nav-link dropdown-toggle" 
-              href="#" 
-              id="navbarDropdown" 
-              role="button" 
-              data-bs-toggle="dropdown" 
-              aria-expanded="false">
-              Menu
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li class="dropdown-submenu">
-                <a class="dropdown-item dropdown-toggle" href="#">Casos ML</a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="/casoUno">Primer Caso</a></li>
-                  <li><a class="dropdown-item" href="/casoDos">Segundo Caso</a></li>
-                  <li><a class="dropdown-item" href="/casoTres">Tercer Caso</a></li>
-                  <li><a class="dropdown-item" href="/casoCuatro">Cuarto Caso</a></li>
-                </ul>
-              </li>
-              <!-- 🔹 Submenú de Regresión Lineal -->
-              <li class="dropdown-submenu">
-                <a class="dropdown-item dropdown-toggle" href="#">Regresión Lineal</a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="/regresionConceptos">Conceptos básicos</a></li>
-                  <li><a class="dropdown-item" href="/LR">Ejercicio práctico</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- 🔹 Contenido -->
-  <div class="container my-5">
-    <h2 class="text-center mb-4 text-white">Conceptos básicos de Regresión Lineal</h2>
-
-    <div class="accordion" id="accordionConceptos">
-
-      <!-- Sección 1 -->
-      <div class="accordion-item card mb-3">
-        <h2 class="accordion-header" id="headingOne">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-            Introducción a la regresión lineal
-          </button>
-        </h2>
-        <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionConceptos">
-          <div class="accordion-body">
-            La regresión lineal es una de las herramientas estadísticas más utilizadas para analizar la relación entre variables. 
-            Su propósito es modelar cómo una variable dependiente se comporta en función de una o más variables independientes, 
-            lo que permite tanto describir tendencias como hacer predicciones 
-            (<strong>Dagnino, 2014</strong>). 
-            Por ejemplo, en un contexto educativo, podría usarse para estimar la calificación final de un estudiante a partir de sus horas de estudio y asistencia a clase.
-          </div>
-        </div>
-      </div>
-
-      <!-- Sección 2 -->
-      <div class="accordion-item card mb-3">
-        <h2 class="accordion-header" id="headingTwo">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
-            Regresión lineal múltiple
-          </button>
-        </h2>
-        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionConceptos">
-          <div class="accordion-body">
-            Cuando se extiende a más de una variable explicativa, se habla de regresión lineal múltiple, la cual proporciona un panorama más completo en situaciones donde intervienen varios factores al mismo tiempo. 
-            Este enfoque se estima generalmente mediante mínimos cuadrados ordinarios, buscando que el modelo sea insesgado y eficiente bajo los supuestos clásicos del modelo lineal 
-            (<strong>Uriel, 2013</strong>).
-          </div>
-        </div>
-      </div>
-
-      <!-- Sección 3 -->
-      <div class="accordion-item card mb-3">
-        <h2 class="accordion-header" id="headingThree">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
-            Supuestos fundamentales
-          </button>
-        </h2>
-        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionConceptos">
-          <div class="accordion-body">
-            <ul>
-              <li><b>Linealidad:</b> la relación entre las variables debe ser lineal. Ejemplo: a mayor temperatura, aumenta la demanda de helados.</li>
-              <li><b>Independencia:</b> los errores deben ser independientes. Ejemplo: en ventas diarias, el error de un día no depende del anterior.</li>
-              <li><b>Homoscedasticidad:</b> la varianza de los errores debe ser constante. Ejemplo: ingresos en función de experiencia deben mostrar errores similares en todos los niveles.</li>
-              <li><b>Normalidad del error:</b> los residuos deben seguir una distribución normal. Ejemplo: al predecir peso desde estatura, los errores se deben distribuir en forma de campana alrededor de cero.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Sección 4 -->
-      <div class="accordion-item card mb-3">
-        <h2 class="accordion-header" id="headingFour">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
-            Conclusión
-          </button>
-        </h2>
-        <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionConceptos">
-          <div class="accordion-body">
-            Cumplir con estos supuestos garantiza que las estimaciones del modelo sean confiables y que las inferencias estadísticas tengan validez. 
-            En caso contrario, las conclusiones podrían ser engañosas y sería necesario considerar transformaciones o modelos alternativos 
-            (<strong>Nabi, 2021; Uriel, 2013</strong>).
-          </div>
-        </div>
-      </div>
-
-      <!-- Sección 5 -->
-      <div class="accordion-item card mb-3">
-        <h2 class="accordion-header" id="headingFive">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive">
-            Referencias
-          </button>
-        </h2>
-        <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionConceptos">
-          <div class="accordion-body">
-            <ul>
-              <li>Dagnino, J. (2014). <i>Regresión lineal</i>. Revista Chilena de Anestesia, 43(2), 143–149. https://doi.org/10.25237/revchilanestv43n02.06</li>
-              <li>Uriel, E. (2013). <i>Regresión lineal múltiple: estimación y propiedades</i>. Universidad de Valencia.</li>
-              <li>Nabi, I. (2021). <i>Supuestos del modelo clásico de regresión lineal y de los modelos lineales generalizados</i>. Marxist Philosophy of Science. https://marxistphilosophyofscience.com/wp-content/uploads/2021/09/supuestos-del-modelo-clasico-de-regresion-lineal-y-de-los-modelos-lineales-generalizados-isadore-nabi.pdf</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
+<!-- 🔹 Navbar -->
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+      data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" 
+             data-bs-toggle="dropdown" aria-expanded="false"> Menu </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li class="dropdown-submenu">
+              <a class="dropdown-item dropdown-toggle" href="#">Casos ML</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/casoUno">Primer Caso</a></li>
+                <li><a class="dropdown-item" href="/casoDos">Segundo Caso</a></li>
+                <li><a class="dropdown-item" href="/casoTres">Tercer Caso</a></li>
+                <li><a class="dropdown-item" href="/casoCuatro">Cuarto Caso</a></li>
+              </ul>
+            </li>
+            <!-- 🔹 Submenú de Regresión Lineal -->
+            <li class="dropdown-submenu">
+              <a class="dropdown-item dropdown-toggle" href="#">Regresión Lineal</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/regresionConceptos">Conceptos básicos</a></li>
+                <li><a class="dropdown-item" href="/LR">Ejercicio práctico</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
     </div>
   </div>
+</nav>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- 🔹 Contenido -->
+<div class="container my-5">
+  <h2 class="text-center mb-4 text-white">Conceptos básicos de Regresión Lineal</h2>
+  <div class="accordion" id="accordionConceptos">
+
+    <!-- Sección 1 -->
+    <div class="accordion-item card mb-3">
+      <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+          Introducción a la regresión lineal
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionConceptos">
+        <div class="accordion-body">
+          La regresión lineal es una de las herramientas estadísticas más utilizadas para analizar la relación entre variables. 
+          Su propósito es modelar cómo una variable dependiente se comporta en función de una o más variables independientes, 
+          lo que permite tanto describir tendencias como hacer predicciones (<strong>Dagnino, 2014</strong>). 
+          Por ejemplo, en un contexto educativo, podría usarse para estimar la calificación final de un estudiante a partir 
+          de sus horas de estudio y asistencia a clase.
+        </div>
+      </div>
+    </div>
+
+    <!-- Sección 2 -->
+    <div class="accordion-item card mb-3">
+      <h2 class="accordion-header" id="headingTwo">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+          Regresión lineal múltiple
+        </button>
+      </h2>
+      <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionConceptos">
+        <div class="accordion-body">
+          Cuando se extiende a más de una variable explicativa, se habla de regresión lineal múltiple, 
+          la cual proporciona un panorama más completo en situaciones donde intervienen varios factores al mismo tiempo. 
+          Este enfoque se estima generalmente mediante mínimos cuadrados ordinarios, buscando que el modelo sea insesgado 
+          y eficiente bajo los supuestos clásicos del modelo lineal (<strong>Uriel, 2013</strong>).
+        </div>
+      </div>
+    </div>
+
+    <!-- Sección 3 -->
+    <div class="accordion-item card mb-3">
+      <h2 class="accordion-header" id="headingThree">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+          Supuestos fundamentales
+        </button>
+      </h2>
+      <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionConceptos">
+        <div class="accordion-body">
+          <ul>
+            <li><b>Linealidad:</b> la relación entre las variables debe ser lineal.</li>
+            <li><b>Independencia:</b> los errores deben ser independientes.</li>
+            <li><b>Homoscedasticidad:</b> la varianza de los errores debe ser constante.</li>
+            <li><b>Normalidad del error:</b> los residuos deben seguir una distribución normal.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sección 4 - Dataset -->
+    <div class="accordion-item card mb-3">
+      <h2 class="accordion-header" id="headingFourDataset">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFourDataset">
+          Dataset de entrenamiento
+        </button>
+      </h2>
+      <div id="collapseFourDataset" class="accordion-collapse collapse" data-bs-parent="#accordionConceptos">
+        <div class="accordion-body">
+          Un dataset de entrenamiento es el conjunto de datos utilizado para que un modelo aprenda patrones y relaciones entre variables. 
+          En el caso de la regresión lineal, contiene valores de entrada (variables independientes) y de salida (variable dependiente), 
+          lo que permite al algoritmo ajustar la recta o el hiperplano que mejor represente esas relaciones.
+          <br><br>
+          Ejemplos de datasets muy utilizados en aprendizaje automático son:
+          <ul>
+            <li><b>Boston Housing Dataset:</b> precios de viviendas en Boston en función de variables socioeconómicas y ambientales (Harrison & Rubinfeld, 1978).</li>
+            <li><b>Iris Dataset:</b> características morfológicas de flores, muy usado en clasificación pero adaptable a regresión (Fisher, 1936).</li>
+            <li><b>Wine Quality Dataset:</b> propiedades físico-químicas de vinos para predecir su calidad (Cortez et al., 2009).</li>
+          
+            <p>Un dataset posee varias propiedades importantes como el número de filas (observaciones) y columnas (características), los tipos de datos que pueden ser numéricos, categóricos o de texto, la presencia de valores faltantes que deben limpiarse, posibles duplicados que afectan la calidad, así como estadísticas básicas (media, mediana, desviación estándar, etc.) y, en caso de problemas de clasificación, el balance de clases que muestra la distribución de las categorías en la variable objetivo.
+           </p>
+
+          </ul>
+          Estos datasets permiten practicar conceptos de regresión lineal y son la base para evaluar la capacidad predictiva de un modelo.
+        </div>
+      </div>
+    </div>
+<!-- Sección extra - Ejemplo práctico de regresión lineal -->
+<div class="accordion-item card mb-3">
+  <h2 class="accordion-header" id="headingSeven">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven">
+      Ejemplo práctico de regresión lineal
+    </button>
+  </h2>
+  <div id="collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionConceptos">
+    <div class="accordion-body">
+      Imaginemos que queremos predecir la nota final de un estudiante en función de las horas de estudio.
+      <br><br>
+      <b>Dataset:</b>
+      <table class="table table-bordered table-sm">
+        <thead class="table-dark">
+          <tr>
+            <th>Horas de estudio (X)</th>
+            <th>Nota final (Y)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>55</td></tr>
+          <tr><td>2</td><td>60</td></tr>
+          <tr><td>3</td><td>65</td></tr>
+          <tr><td>4</td><td>70</td></tr>
+          <tr><td>5</td><td>75</td></tr>
+        </tbody>
+      </table>
+      El modelo de regresión lineal ajusta la recta:
+      <div class="alert alert-info"><b>Y = 50 + 5X</b></div>
+      Eso significa que cada hora de estudio aumenta en promedio 5 puntos la nota del estudiante.
+      <br><br>
+      <b>Ejemplo de predicción:</b> Si un estudiante estudia 6 horas, el modelo estima:
+      <div class="alert alert-success"><b>Y = 50 + 5(6) = 80</b></div>
+    </div>
+  </div>
+</div>
+
+<!-- Sección extra - Ejemplo dataset dividido -->
+<div class="accordion-item card mb-3">
+  <h2 class="accordion-header" id="headingEight">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight">
+      Ejemplo de dataset de entrenamiento
+    </button>
+  </h2>
+  <div id="collapseEight" class="accordion-collapse collapse" data-bs-parent="#accordionConceptos">
+    <div class="accordion-body">
+      Supongamos que tenemos 10 datos de horas de estudio y notas. 
+      Para entrenar un modelo, los dividimos así:
+      <ul>
+        <li><b>Training set (70%):</b> 7 datos para que el modelo aprenda.</li>
+        <li><b>Validation set (15%):</b> 1–2 datos para ajustar parámetros.</li>
+        <li><b>Test set (15%):</b> 1–2 datos para evaluar el modelo con ejemplos nuevos.</li>
+      </ul>
+      <b>Ejemplo concreto:</b>
+      <table class="table table-bordered table-sm">
+        <thead class="table-dark">
+          <tr>
+            <th>Horas (X)</th>
+            <th>Nota (Y)</th>
+            <th>Uso</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>55</td><td>Training</td></tr>
+          <tr><td>2</td><td>60</td><td>Training</td></tr>
+          <tr><td>3</td><td>65</td><td>Training</td></tr>
+          <tr><td>4</td><td>70</td><td>Training</td></tr>
+          <tr><td>5</td><td>75</td><td>Training</td></tr>
+          <tr><td>6</td><td>80</td><td>Validation</td></tr>
+          <tr><td>7</td><td>85</td><td>Validation</td></tr>
+          <tr><td>8</td><td>88</td><td>Test</td></tr>
+          <tr><td>9</td><td>90</td><td>Test</td></tr>
+          <tr><td>10</td><td>95</td><td>Test</td></tr>
+        </tbody>
+      </table>
+      Con esta división, el modelo aprende con los primeros 7 datos, se ajusta con los de validación y se prueba con los últimos.
+    </div>
+  </div>
+</div>
+
+    <!-- Sección 5 -->
+    <div class="accordion-item card mb-3">
+      <h2 class="accordion-header" id="headingFive">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive">
+          Conclusión
+        </button>
+      </h2>
+      <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionConceptos">
+        <div class="accordion-body">
+          Cumplir con estos supuestos garantiza que las estimaciones del modelo sean confiables 
+          y que las inferencias estadísticas tengan validez. En caso contrario, las conclusiones podrían ser engañosas 
+          y sería necesario considerar transformaciones o modelos alternativos (<strong>Nabi, 2021; Uriel, 2013</strong>).
+        </div>
+      </div>
+    </div>
+
+    <!-- Sección 6 -->
+    <div class="accordion-item card mb-3">
+      <h2 class="accordion-header" id="headingSix">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix">
+          Referencias
+        </button>
+      </h2>
+      <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionConceptos">
+        <div class="accordion-body">
+          <ul>
+            <li>Dagnino, J. (2014). <i>Regresión lineal</i>. Revista Chilena de Anestesia, 43(2), 143–149. https://doi.org/10.25237/revchilanestv43n02.06</li>
+            <li>Uriel, E. (2013). <i>Regresión lineal múltiple: estimación y propiedades</i>. Universidad de Valencia.</li>
+            <li>Nabi, I. (2021). <i>Supuestos del modelo clásico de regresión lineal y de los modelos lineales generalizados</i>. 
+              Marxist Philosophy of Science. https://marxistphilosophyofscience.com/wp-content/uploads/2021/09/supuestos-del-modelo-clasico-de-regresion-lineal-y-de-los-modelos-lineales-generalizados-isadore-nabi.pdf</li>
+            <li>Harrison, D., & Rubinfeld, D. L. (1978). Hedonic housing prices and the demand for clean air. 
+              <i>Journal of Environmental Economics and Management, 5</i>(1), 81–102. https://doi.org/10.1016/0095-0696(78)90006-2</li>
+            <li>Fisher, R. A. (1936). The use of multiple measurements in taxonomic problems. 
+              <i>Annals of Eugenics, 7</i>(2), 179–188. https://doi.org/10.1111/j.1469-1809.1936.tb02137.x</li>
+            <li>Cortez, P., Cerdeira, A., Almeida, F., Matos, T., & Reis, J. (2009). Modeling wine preferences by data mining from physicochemical properties. 
+              <i>Decision Support Systems, 47</i>(4), 547–553. https://doi.org/10.1016/j.dss.2009.05.016</li>
+            <li><a href="https://openwebinars.net/blog/datasets-que-son-y-como-acceder-a-ellos/" target="_blank">
+              OpenWebinars - Datasets: qué son y cómo acceder a ellos</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
+
