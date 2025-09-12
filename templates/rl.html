@@ -67,10 +67,11 @@
 </script>   
     <h1>Regresión lineal<h1>
         <form method="post">
-            <label for="hours">Horas de estudio</label> 
-            <input type="number"  name="hours" required>
+            <label for="distancia">Distancia </label> 
+            <label for="pasajeros">Pasajeros</label>
+            <input type="number"  name="distancia" required>
+            <input type="number" name="pasajeros" required>
             <button type="submit">Predecir</button>
-
             {% if result is not none %}
                 <h2>Calificación estimada: {{ result }}</h2>
             {% endif %}

@@ -35,8 +35,9 @@ def casoCuatro():
 def LR():
     calculateResult = None
     if request.method == "POST":
-        hours = float(request.form["hours"])
-        calculateResult = CalculateGrade(hours)
+        distancia = float(request.form["distancia"])
+        pasajeros = float(request.form["pasajeros"])
+        calculateResult = CalculateGrade(distancia,pasajeros)
     return render_template("rl.html", result=calculateResult)
 
 @app.route('/regresionConceptos')

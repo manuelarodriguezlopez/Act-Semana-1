@@ -5,16 +5,16 @@ from sklearn.linear_model import LinearRegression
 app = Flask(__name__)
 
 data = {
-    "Study Hours": [10, 15, 12, 8, 14, 5, 16, 7, 11, 13, 9, 4, 18, 3, 17, 6, 14, 2, 20, 1],
-    "Final Grade": [3.8, 4.2, 3.6, 3, 4.5, 2.5, 4.8, 2.8, 3.7, 4, 3.2, 2.2, 5, 1.8, 4.9, 2.7, 4.4, 1.5, 5, 1]
+    "Distancia Recorrida": [2, 5, 7, 10, 3, 8, 12, 15, 6, 20, 18, 25, 30, 22, 28],
+    "Pasajeros": [1, 2, 3, 1, 4, 2, 5, 3, 2, 6, 4, 5, 7, 3, 6],
+    "Precio": [5500, 13000, 18000, 20500, 9500, 18500, 28500, 34500, 14500, 47000, 39500, 53500, 67500, 45500, 63500]
 }
 
 df = pd.DataFrame(data)
-x = df[["Study Hours"]]
-y = df["Final Grade"]  # Series en lugar de DataFrame
+x = df[["Distancia Recorrida","Pasajeros"]]
+y = df["Precio"]
 model = LinearRegression()
 model.fit(x, y)
-
-def CalculateGrade(hours):
-    result = model.predict([[hours]])[0]
-    return result
+def CalculateGrade(distancia,pasajeros):
+    result = model.predict([[distancia,pasajeros]])[0]
+    return round(result)
