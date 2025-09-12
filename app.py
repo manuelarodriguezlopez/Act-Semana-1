@@ -1,48 +1,97 @@
-from flask import Flask
-from flask import render_template
-from flask import request
+from flask import Flask, render_template, request, url_for
+import matplotlib.pyplot as plt
+import numpy as np
+import os
 import LRModel
 from LRModel import CalculateGrade
 
 app = Flask(__name__)
 
+
 @app.route('/')
 def index():
-    Username = " Mateo"
+    Username = "Mateo"
     return render_template('index2.html', name=Username)
+
 
 @app.route('/casoUno')
 def casoUno():
-    Username = " Mateo"
+    Username = "Mateo"
     return render_template('casoUno.html', name=Username)
 
 @app.route('/casoDos')
 def casoDos():
-    Username = " Mateo"
+    Username = "Mateo"
     return render_template('casodos.html', name=Username)
 
 @app.route('/casoTres')
 def casoTres():
-    Username = " Mateo"
+    Username = "Mateo"
     return render_template('casoTres.html', name=Username)
 
 @app.route('/casoCuatro')
 def casoCuatro():
-    Username = " Mateo"
+    Username = "Mateo"
     return render_template('casoCuatro.html', name=Username)
-
-@app.route('/LR', methods=["GET", "POST"])
-def LR():
-    calculateResult = None
-    if request.method == "POST":
-        distancia = float(request.form["distancia"])
-        pasajeros = float(request.form["pasajeros"])
-        calculateResult = CalculateGrade(distancia,pasajeros)
-    return render_template("rl.html", result=calculateResult)
 
 @app.route('/regresionConceptos')
 def regresionConceptos():
     return render_template("rlconceptos.html")
 
-if __name__ == "__main__":
-    app.run(debug=True)
+
+@app.route('/LR', methods=["GET", "POST"])
+def LR():
+    df = LRModel.df  
+
+   
+    media = df["Precio"].mean()
+    mediana = df["Precio"].median()
+
+
+    calculateResult = None
+    distancia = None
+    pasajeros = None
+
+ 
+    if request.method == "POST":
+        distancia = float(request.form["distancia"])
+        pasajeros = float(request.form["pasajeros"])
+        calculateResult = CalculateGrade(distancia, pasajeros)
+
+
+    image_path = os.path.join('static', 'images')
+    if not os.path.exists(image_path):
+        os.makedirs(image_path)
+
+    plt.figure(figsize=(8, 6))
+    
+  
+    plt.scatter(df["Distancia Recorrida"], df["Precio"], color='blue', s=80, label='Datos')
+
+
+    x_vals = np.linspace(df["Distancia Recorrida"].min(), df["Distancia Recorrida"].max(), 100)
+    
+   
+    y_vals = [CalculateGrade(x, 1) for x in x_vals]  
+    plt.plot(x_vals, y_vals, color='orange', linewidth=2, label='Línea de Regresión')
+
+    
+
+    plt.title('Gráfico de Dispersión y Linea de Regresión')
+    plt.xlabel('Distancia Recorrida')
+    plt.ylabel('Precio')
+    plt.legend()
+    plt.grid(True, linestyle='--', alpha=0.7)
+
+
+    graph_file = os.path.join(image_path, 'grafico.png')
+    plt.savefig(graph_file)
+    plt.close()
+
+    return render_template(
+        "rl.html",
+        result=calculateResult,
+        graph_url=url_for('static', filename='images/grafico.png'),
+        media=media,
+        mediana=mediana
+    )
