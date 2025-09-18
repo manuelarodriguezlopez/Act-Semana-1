@@ -9,6 +9,7 @@ import numpy as np
 import os
 import LRModel
 from LRModel import CalculateGrade
+import LogRep
 
 app = Flask(__name__)
 
@@ -95,3 +96,9 @@ def LR():
         mediana=mediana,
         message=message  
     )
+@app.route('/LogisConceptos')
+def LogisConceptos():
+    return render_template("logisconceptos.html")
+@app.route('/Lc')
+def Lc():
+    return render_template("Lc.html")
