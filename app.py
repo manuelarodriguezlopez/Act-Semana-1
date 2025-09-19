@@ -1,9 +1,9 @@
 from flask import Flask, render_template, request, url_for
-###########################################3
-##agregé estas dos para que funcione la actualizacion de los datos
+###########################################
+## Esto evita problemas con la generación de imágenes en Flask
 import matplotlib
 matplotlib.use('Agg')
-##########################################
+###########################################
 import matplotlib.pyplot as plt
 import numpy as np
 import os
@@ -12,8 +12,7 @@ from LRModel import CalculateGrade
 import LogRep
 
 app = Flask(__name__)
-
-
+model, scaler, x_test, y_test = LogRep.entrenar_modelo()
 @app.route('/')
 def index():
     Username = "Mateo"
@@ -44,19 +43,18 @@ def casoCuatro():
 def regresionConceptos():
     return render_template("rlconceptos.html")
 
-
+# REGRESIÓN LINEAL
 @app.route('/LR', methods=["GET", "POST"])
 def LR():
     df = LRModel.df  
     media = df["Precio"].mean()
     mediana = df["Precio"].median()
-##estos son variables para guardar resultados, se inician en cero
+
     calculateResult = None
     distancia = None
     pasajeros = None
     message = None 
-##si los datos vienen con precio eso quiere decir que es actualizar. (UpdateData)
-##si no viene con precio quiere decir que es calcular (calculateGrade)
+
     if request.method == "POST":
         if "precio" in request.form:
             distancia = float(request.form["distancia"])
@@ -78,7 +76,7 @@ def LR():
     y_vals = [CalculateGrade(x, 1) for x in x_vals]  
     plt.plot(x_vals, y_vals, color='orange', linewidth=2, label='Línea de Regresión')
 
-    plt.title('Gráfico de Dispersión y Linea de Regresión')
+    plt.title('Gráfico de Dispersión y Línea de Regresión')
     plt.xlabel('Distancia Recorrida')
     plt.ylabel('Precio')
     plt.legend()
@@ -99,6 +97,28 @@ def LR():
 @app.route('/LogisConceptos')
 def LogisConceptos():
     return render_template("logisconceptos.html")
-@app.route('/Lc')
+# REGRESION LOGISTICA
+@app.route('/Lc', methods=["GET", "POST"])
 def Lc():
-    return render_template("Lc.html")
+    result = None
+    prob = None
+    # Evaluamos el modelo y generamos la matriz de confusión al entrar por GET
+    metrics = LogRep.evaluar_modelo(model, x_test, y_test, filename="static/images/confusion_matrix.png")
+
+    if request.method == "POST":
+        # Recibir datos del formulario
+        horas = float(request.form["horas"])
+        calorias = float(request.form["calorias"])
+        sexo = int(request.form["sexo"])
+        pantalla = float(request.form["pantalla"])
+
+        features = [horas, calorias, sexo, pantalla]
+        result, prob = LogRep.Predecir(model, scaler, features)
+
+    return render_template(
+        "Lc.html",
+        metrics=metrics,
+        result=result,
+        prob=prob,
+        confusion_matrix=url_for('static', filename='images/confusion_matrix.png')
+    )
