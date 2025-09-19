@@ -1,18 +1,24 @@
-from flask import Flask, render_template, request, url_for
+from flask import Flask, render_template, request
 ###########################################
-## Esto evita problemas con la generación de imágenes en Flask
+## Evita problemas con la generación de imágenes en Flask
 import matplotlib
 matplotlib.use('Agg')
 ###########################################
 import matplotlib.pyplot as plt
 import numpy as np
 import os
+
+# Import modelos
 import LRModel
 from LRModel import CalculateGrade
 import LogRep
 
 app = Flask(__name__)
-model, scaler, x_test, y_test = LogRep.entrenar_modelo()
+
+###########################################
+# Rutas de la aplicación
+###########################################
+
 @app.route('/')
 def index():
     Username = "Mateo"
@@ -39,13 +45,23 @@ def casoCuatro():
     Username = "Mateo"
     return render_template('casoCuatro.html', name=Username)
 
+###########################################
+# CONCEPTOS
+###########################################
 @app.route('/regresionConceptos')
 def regresionConceptos():
     return render_template("rlconceptos.html")
 
+@app.route('/LogisConceptos')
+def LogisConceptos():
+    return render_template("logisconceptos.html")
+
+###########################################
 # REGRESIÓN LINEAL
+###########################################
 @app.route('/LR', methods=["GET", "POST"])
 def LR():
+    # Cargamos siempre datos actualizados
     df = LRModel.df  
     media = df["Precio"].mean()
     mediana = df["Precio"].median()
@@ -66,10 +82,12 @@ def LR():
             pasajeros = float(request.form["pasajeros"])
             calculateResult = CalculateGrade(distancia, pasajeros)
 
+    # Generamos carpeta para guardar gráfico
     image_path = os.path.join('static', 'images')
     if not os.path.exists(image_path):
         os.makedirs(image_path)
 
+    # Graficar datos y línea de regresión
     plt.figure(figsize=(8, 6))
     plt.scatter(df["Distancia Recorrida"], df["Precio"], color='blue', s=80, label='Datos')
     x_vals = np.linspace(df["Distancia Recorrida"].min(), df["Distancia Recorrida"].max(), 100)
@@ -89,20 +107,24 @@ def LR():
     return render_template(
         "rl.html",
         result=calculateResult,
-        graph_url=url_for('static', filename='images/grafico.png'),
+        graph_url=os.path.join('static', 'images', 'grafico.png'),
         media=media,
         mediana=mediana,
         message=message  
     )
-@app.route('/LogisConceptos')
-def LogisConceptos():
-    return render_template("logisconceptos.html")
-# REGRESION LOGISTICA
+
+###########################################
+# REGRESIÓN LOGÍSTICA
+###########################################
 @app.route('/Lc', methods=["GET", "POST"])
 def Lc():
     result = None
     prob = None
-    # Evaluamos el modelo y generamos la matriz de confusión al entrar por GET
+
+    # Entrenar modelo (siempre en cada request)
+    model, scaler, x_test, y_test = LogRep.entrenar_modelo()
+
+    # Evaluar modelo y generar matriz de confusión (🔥 se genera en GET y POST)
     metrics = LogRep.evaluar_modelo(model, x_test, y_test, filename="static/images/confusion_matrix.png")
 
     if request.method == "POST":
@@ -114,6 +136,9 @@ def Lc():
 
         features = [horas, calorias, sexo, pantalla]
         result, prob = LogRep.Predecir(model, scaler, features)
+
+        # 🔄 Volvemos a evaluar después de predecir para regenerar matriz actualizada
+        metrics = LogRep.evaluar_modelo(model, x_test, y_test, filename="static/images/confusion_matrix.png")
 
     return render_template(
         "Lc.html",
