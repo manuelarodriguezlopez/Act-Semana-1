@@ -17,7 +17,7 @@ def entrenar_modelo(csv_file='adolescentes_sobrepeso.csv'):
     X = data.drop('Sobrepeso', axis=1)
     y = data['Sobrepeso']
     # Train-test split
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.5, random_state=42)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
     # Escalado
     scaler = StandardScaler()
     X_train_scaled = scaler.fit_transform(X_train)
@@ -46,7 +46,7 @@ def evaluar_modelo(model, X_test, y_test, filename="static/images/confusion_matr
     return {"accuracy": accuracy, "report": report, "matrix": matrix, "image": filename}
 
 
-def Predecir(model, scaler, features, threshold=0.5):
+def Predecir(model, scaler, features, threshold=0.2):
     # Escalar datos de entrada
     features = np.array(features).reshape(1, -1)
     features_scaled = scaler.transform(features)
