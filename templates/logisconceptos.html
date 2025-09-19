@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Regresión Logística - Conceptos Extensos</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+  <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="bgH1">
+
+  <!-------------------------------------- NAVBAR -------------------------------------->
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">Inicio</a>
+    </div>
+  </nav>
+
+  <!-------------------------------------- CONTENIDO -------------------------------------->
+  <div class="container my-5">
+    <div class="card shadow-lg p-4 bg-dark text-light">
+      <h2 class="mb-3 text-center">¿Qué es la Regresión Logística?</h2>
+      <p>
+        La <strong>regresión logística</strong> es un modelo estadístico ampliamente utilizado cuando la 
+        <em>variable dependiente</em> es categórica y normalmente binaria, es decir, que toma solo dos posibles valores 
+        (ejemplo: sano/enfermo, aprobado/reprobado, compra/no compra). 
+        A diferencia de la <strong>regresión lineal</strong>, que predice valores continuos, la regresión logística 
+        se enfoca en <strong>estimar probabilidades</strong>.
+      </p>
+
+      <h3 class="mt-4">La función logística (sigmoide)</h3>
+      <p>
+        El corazón del modelo es la <em>función sigmoide</em>, también llamada función logística. 
+        Su fórmula matemática es:
+      </p>
+      <pre class="bg-secondary p-3 rounded">
+        P(Y=1|X) = 1 / (1 + e^-(β₀ + β₁X₁ + β₂X₂ + ... + βₙXₙ))
+      </pre>
+      <p>
+        Esta función transforma cualquier combinación lineal de variables independientes en un valor 
+        entre 0 y 1, lo que se interpreta como una probabilidad. Si el resultado es mayor a un 
+        umbral (por ejemplo, 0.5), se predice la categoría positiva (1); de lo contrario, la negativa (0).
+      </p>
+
+      <h3 class="mt-4">Aplicaciones prácticas</h3>
+      <ul>
+        <li><strong>Medicina:</strong> Diagnosticar enfermedades como diabetes o cáncer en función de síntomas y análisis clínicos.</li>
+        <li><strong>Finanzas:</strong> Evaluar la probabilidad de fraude en transacciones o de incumplimiento en créditos.</li>
+        <li><strong>Marketing:</strong> Predecir si un cliente comprará un producto en función de su historial de compras.</li>
+        <li><strong>Ciencias sociales:</strong> Analizar la probabilidad de que un estudiante apruebe en función de factores como asistencia y hábitos de estudio.</li>
+      </ul>
+
+      <h3 class="mt-4">Ventajas y limitaciones</h3>
+      <p>
+        <strong>Ventajas:</strong> 
+        es fácil de implementar, interpretar y muy eficiente para problemas de clasificación binaria.
+        Además, permite calcular odds ratios, que muestran el efecto de cada variable sobre la probabilidad del evento.
+      </p>
+      <p>
+        <strong>Limitaciones:</strong> 
+        puede ser ineficiente si la relación entre variables no es lineal en el logit,
+        y su rendimiento disminuye en datasets muy complejos o de alta dimensionalidad, donde
+        suelen preferirse métodos como árboles de decisión o redes neuronales.
+      </p>
+
+      <h3 class="mt-4">Ejemplo ilustrativo</h3>
+      <p>
+        Supongamos que queremos predecir si un estudiante aprobará un curso en función de 
+        sus <em>horas de estudio</em> y <em>asistencia</em>. La regresión logística nos permitirá 
+        calcular la probabilidad de aprobar (1) o reprobar (0). 
+        Si el modelo estima una probabilidad del 0.78, interpretamos que el estudiante tiene 
+        un 78% de posibilidades de aprobar.
+      </p>
+
+      <h4 class="mt-4">Referencias (APA 7):</h4>
+      <ul>
+        <li>Hosmer, D. W., Lemeshow, S., & Sturdivant, R. X. (2013). <em>Applied logistic regression</em> (3rd ed.). Wiley.</li>
+        <li>Kleinbaum, D. G., & Klein, M. (2010). <em>Logistic regression: A self-learning text</em> (3rd ed.). Springer.</li>
+        <li>Peng, C. Y. J., Lee, K. L., & Ingersoll, G. M. (2002). An introduction to logistic regression analysis and reporting. <em>The Journal of Educational Research, 96</em>(1), 3–14. https://doi.org/10.1080/00220670209598786</li>
+        <li>Menard, S. (2002). <em>Applied logistic regression analysis</em> (2nd ed.). SAGE Publications.</li>
+        <li>Field, A. (2018). <em>Discovering statistics using IBM SPSS statistics</em> (5th ed.). SAGE Publications.</li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(20, 20, 20, 0.7);
+      z-index: -1;
+    }
+    .navbar { background-color: black; }
+    .card { border-radius: 15px; }
+    h2, h3, h4 { color: #f8f9fa; }
+    p, li, pre { font-size: 1.1rem; }
+    pre { color: #fff; }
+  </style>
+</body>
+</html>
