@@ -1,29 +1,17 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
 import os
-from NaiveBayes import entrenar_modelo, evaluar_modelo, predict_label
+import Naivebayes
 from flask import Flask, render_template, request
-###########################################
-## Evita problemas con la generación de imágenes en Flask
 import matplotlib
 matplotlib.use('Agg')
-###########################################
 import matplotlib.pyplot as plt
 import numpy as np
 import os
-
-# Import modelos
 import LRModel
 from LRModel import CalculateGrade
 import LogRep
 
 app = Flask(__name__)
-
-
-
-
-###########################################
-# Rutas de la aplicación
-###########################################
 
 @app.route('/')
 def index():
@@ -155,32 +143,14 @@ def Lc():
         confusion_matrix=url_for('static', filename='images/confusion_matrix.png')
     )
 
-
-
-app = Flask(__name__)
-app.secret_key = 'unasecretkey'  
-
-ARTIFACTS = entrenar_modelo(csv_file='NaiveBayes.csv')
-
-METRICS = evaluar_modelo(ARTIFACTS)  
-
-@app.route('/naivebayes', methods=['GET'])
-def nb_page():
-    return render_template('NaiveBayes.html', metrics=METRICS)
-
-@app.route('/naivebayes/predict', methods=['POST'])
-def nb_predict():
-    mensaje = request.form.get('mensaje','')
-    prioridad = request.form.get('prioridad','Baja')
-    palabras_clave = request.form.get('palabras_clave','')
-    hora = request.form.get('hora','9')
-    threshold = request.form.get('threshold', None)
-    try:
-        result = predict_label(ARTIFACTS, mensaje, prioridad, palabras_clave, hora, threshold)
-        return render_template('NaiveBayes.html', metrics=METRICS, prediction=result)
-    except Exception as e:
-        flash('Error al predecir: ' + str(e))
-        return redirect(url_for('nb_page'))
-
+###########################################
+# NAIVE BAYES 
+###########################################
+@app.route("/naivebayes")
+def naive_bayes():
+    resultados = Naivebayes.entrenar_y_graficar("naivebayes.csv")
+    return render_template("NaiveBayes.html",
+                           accuracy=resultados["accuracy"],
+                           image=resultados["image"])
 if __name__ == '__main__':
     app.run(debug=True)

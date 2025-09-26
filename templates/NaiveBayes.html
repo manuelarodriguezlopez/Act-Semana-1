@@ -1,95 +1,159 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Naive Bayes - Caso Práctico</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-------------------------------------- HEAD -------------------------------------->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Naive Bayes</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+  >
+  <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body class="bg-light">
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/">ML App</a>
-    <div class="collapse navbar-collapse">
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-        <li class="nav-item"><a class="nav-link active" href="/naivebayes">Naive Bayes</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+<body class="bgH1">
+  <!-------------------------------------- NAVBAR -------------------------------------->
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark"> 
+    <div class="container-fluid"> 
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> 
+        <span class="navbar-toggler-icon"></span> 
+      </button> 
+      <div class="collapse navbar-collapse" id="navbarSupportedContent"> 
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0"> 
+          <li class="nav-item"> 
+            <a class="nav-link active" aria-current="page" href="/">Home</a> 
+          </li> 
+          <li class="nav-item dropdown"> 
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> 
+              Menu 
+            </a> 
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown"> 
+              <!-- Submenú Casos ML -->
+              <li class="dropdown-submenu"> 
+                <a class="dropdown-item dropdown-toggle" href="#">Casos ML</a> 
+                <ul class="dropdown-menu"> 
+                  <li><a class="dropdown-item" href="/casoUno">Primer Caso</a></li> 
+                  <li><a class="dropdown-item" href="/casoDos">Segundo Caso</a></li> 
+                  <li><a class="dropdown-item" href="/casoTres">Tercer Caso</a></li> 
+                  <li><a class="dropdown-item" href="/casoCuatro">Cuarto Caso</a></li> 
+                </ul> 
+              </li> 
 
-<div class="container mt-4">
-  <div class="row">
-    <div class="col-md-6">
-      <h4>Descripción del dataset</h4>
-      <p>Variables: mensaje (texto), prioridad (Baja/Media/Alta), palabras_clave (lista), hora (0-23).</p>
-      <p>Clase positiva: categorías multiclass: Red / Hardware / Software / Usuario</p>
-      <hr>
-      <h5>Formulario de Predicción</h5>
-      <form method="post" action="/naivebayes/predict">
-        <div class="mb-3">
-          <label class="form-label">Mensaje</label>
-          <textarea class="form-control" name="mensaje" required rows="3"></textarea>
-        </div>
-        <div class="mb-3">
-          <label class="form-label">Prioridad</label>
-          <select class="form-select" name="prioridad" required>
-            <option value="Baja">Baja</option>
-            <option value="Media">Media</option>
-            <option value="Alta">Alta</option>
-          </select>
-        </div>
-        <div class="mb-3">
-          <label class="form-label">Palabras clave (separadas por coma)</label>
-          <input class="form-control" name="palabras_clave" />
-        </div>
-        <div class="mb-3">
-          <label class="form-label">Hora (0-23)</label>
-          <input type="number" min="0" max="23" class="form-control" name="hora" value="9" required/>
-        </div>
-        <div class="mb-3">
-          <label class="form-label">Umbral (opcional, 0-1)</label>
-          <input type="number" step="0.01" min="0" max="1" class="form-control" name="threshold" placeholder="0.5"/>
-        </div>
-        <button class="btn btn-primary" type="submit">Predecir</button>
-      </form>
+              <!-- Submenú Regresión Lineal -->
+              <li class="dropdown-submenu">
+                <a class="dropdown-item dropdown-toggle" href="#">Regresión Lineal</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="/regresionConceptos">Conceptos básicos</a></li>
+                  <li><a class="dropdown-item" href="/LR">Ejercicio práctico</a></li>
+                </ul>
+              </li>
+
+              <!-- Submenú Regresión Logística -->
+              <li class="dropdown-submenu">
+                <a class="dropdown-item dropdown-toggle" href="#">Regresión Logística</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="/LogisConceptos">Conceptos básicos</a></li>
+                  <li><a class="dropdown-item" href="/Lc">Ejercicio práctico</a></li>
+                </ul>
+              </li>
+            </ul> 
+          </li> 
+        </ul> 
+      </div>
     </div>
-    <div class="col-md-6">
-      <h4>Métricas (test)</h4>
-      <!-- Aquí el servidor inyectará valores: exactitud, reporte, matriz -->
-      {% if metrics %}
-      <div class="card mb-3">
-        <div class="card-body">
-          <h5>Exactitud: {{ metrics.accuracy }}</h5>
+  </nav> 
+
+  <!-------------------------------------- CONTENIDO PRINCIPAL -------------------------------------->
+  <div class="container my-5">
+    <h1 class="text-center">Modelo Naive Bayes</h1>
+    <div class="accordion my-4" id="accordionExample">
+
+      <!-------------------------------------- BLOQUE RESULTADOS -------------------------------------->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+            Resultados del Modelo
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+          <div class="accordion-body text-center">
+            <h4 class="text-dark">Exactitud: {{ accuracy }}</h4>
+            <p class="text-muted">La siguiente gráfica muestra la matriz de confusión generada por el modelo.</p>
+            <img src="{{ url_for('static', filename=image.split('static/')[1]) }}" 
+                 alt="Matriz de Confusión" 
+                 class="img-fluid rounded shadow my-3">
+          </div>
         </div>
       </div>
-      <h5>Reporte de clasificación</h5>
-      <div class="table-responsive">
-        <table class="table table-striped table-sm">
-          <thead><tr><th>Clase</th><th>Precision</th><th>Recall</th><th>F1</th><th>Support</th></tr></thead>
-          <tbody>
-            {% for cls, vals in metrics.report.items() %}
-              {% if cls != 'accuracy' and cls != 'macro avg' and cls != 'weighted avg' %}
-              <tr>
-                <td>{{ cls }}</td>
-                <td>{{ '%.3f'|format(vals.precision) }}</td>
-                <td>{{ '%.3f'|format(vals.recall) }}</td>
-                <td>{{ '%.3f'|format(vals.f1-score) }}</td>
-                <td>{{ vals.support }}</td>
-              </tr>
-              {% endif %}
-            {% endfor %}
-          </tbody>
-        </table>
+
+      <!-------------------------------------- BLOQUE DATOS -------------------------------------->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+            Información del Caso
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <ul class="list-group">
+              <li class="list-group-item"><strong>Caso:</strong> Clasificación automática de tickets de soporte técnico</li>
+              <li class="list-group-item"><strong>Variables independientes:</strong> Texto del mensaje, prioridad asignada, palabras clave, hora de creación</li>
+              <li class="list-group-item"><strong>Variable dependiente:</strong> Categoría del problema (Red / Hardware / Software / Usuario)</li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <h5>Matriz de Confusión</h5>
-      <img src="{{ url_for('static', filename=metrics.image.split('static/')[1]) }}" class="img-fluid" alt="Matriz de confusión">
-      {% endif %}
     </div>
   </div>
-</div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-------------------------------------- SCRIPTS -------------------------------------->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous">
+  </script>
+  <style>
+    h1, h2, h3, h4 {
+      color: #fff;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(20, 20, 20, 0.7);
+      z-index: -1;
+    }
+    .navbar {
+      background-color: black;
+    }
+    .dropdown-menu {
+      background-color: #212529;
+    }
+    .dropdown-item {
+      color: #fff;
+    }
+    .dropdown-item:hover {
+      background-color: #343a40;
+    }
+    .dropdown-submenu {
+      position: relative;
+    }
+    .dropdown-submenu > .dropdown-menu {
+      display: none;
+      top: 0;
+      left: 100%;
+      margin-top: 3px;
+    }
+    .dropdown-submenu:hover > .dropdown-menu {
+      display: block;
+    }
+  </style>
 </body>
 </html>
