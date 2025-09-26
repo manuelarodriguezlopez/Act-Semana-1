@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
 import os
-import Naivebayes
+import NaiveBayes
 from flask import Flask, render_template, request
 import matplotlib
 matplotlib.use('Agg')
@@ -154,3 +154,4 @@ def naive_bayes():
                            image=resultados["image"])
 if __name__ == '__main__':
     app.run(debug=True)
+
