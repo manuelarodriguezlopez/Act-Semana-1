@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
 import os
-import NaiveBayes
+import Naivebayes
 from flask import Flask, render_template, request
 import matplotlib
 matplotlib.use('Agg')
@@ -152,6 +152,10 @@ def naive_bayes():
     return render_template("NaiveBayes.html",
                            accuracy=resultados["accuracy"],
                            image=resultados["image"])
+@app.route("/Practicos")
+def Practicos():
+    return render_template("AlgoritClas.html")
+
 if __name__ == '__main__':
     app.run(debug=True)
 
