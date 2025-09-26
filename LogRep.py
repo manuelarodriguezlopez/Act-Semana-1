@@ -56,3 +56,10 @@ def evaluar_modelo(model, X_test, y_test, filename=None):
     plt.close()
 
     return {"accuracy": accuracy, "report": report, "matrix": matrix, "image": filename}
+
+def Predecir(model, scaler, features):
+    X = np.array(features).reshape(1, -1)
+    X_scaled = scaler.transform(X)
+    prob = model.predict_proba(X_scaled)[0][1]
+    result = "Sí" if prob >= 0.5 else "No"
+    return result, round(prob, 4)

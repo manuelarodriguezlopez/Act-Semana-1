@@ -54,3 +54,53 @@ def entrenar_y_graficar(csv_file='naivebayes.csv'):
     plt.close()
 
     return {"accuracy": round(acc,4), "image": img_path}
+
+def predecir(csv_file, mensaje, prioridad, palabras_clave, hora, threshold=0.5):
+    data = pd.read_csv(csv_file)
+
+    X = data[['mensaje','prioridad','palabras_clave','hora']].copy()
+    y = data['categoria']
+
+    # Entrenar igual que antes
+    def concat_text(df):
+        return (df['mensaje'].fillna('') + ' ' + df['palabras_clave'].fillna('')).values
+
+    text_vec = TfidfVectorizer(max_features=2000)
+    cat_enc = OneHotEncoder(handle_unknown='ignore', sparse_output=False)
+    scaler = MinMaxScaler()
+    model = ComplementNB()
+
+    X_text = concat_text(X)
+    X_text_vec = text_vec.fit_transform(X_text)
+    X_cat = cat_enc.fit_transform(X[['prioridad']])
+    X_num = scaler.fit_transform(X[['hora']])
+    X_comb = hstack([X_text_vec, csr_matrix(X_cat), csr_matrix(X_num)])
+    model.fit(X_comb, y)
+
+    # Procesar input nuevo
+    input_text = concat_text(pd.DataFrame([{
+        "mensaje": mensaje,
+        "prioridad": prioridad,
+        "palabras_clave": palabras_clave,
+        "hora": hora
+    }]))
+    input_text_vec = text_vec.transform(input_text)
+    input_cat = cat_enc.transform([[prioridad]])
+    input_num = scaler.transform([[hora]])
+    input_comb = hstack([input_text_vec, csr_matrix(input_cat), csr_matrix(input_num)])
+
+    probs = model.predict_proba(input_comb)[0]
+    clases = model.classes_
+
+    # Suponemos binario Sí/No
+    prob_sí = probs[1] if "Sí" in clases else probs[0]
+    pred = "Sí" if prob_sí >= threshold else "No"
+
+    interpretacion = f"Con threshold={threshold}, la predicción cambia su sensibilidad en función del umbral elegido."
+
+    return {
+        "prediccion": pred,
+        "probabilidad": round(prob_sí, 4),
+        "threshold": threshold,
+        "interpretacion": interpretacion
+    }
