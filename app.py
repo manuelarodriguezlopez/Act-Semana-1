@@ -1,3 +1,6 @@
+from flask import Flask, render_template, request, redirect, url_for, flash
+import os
+from NaiveBayes import entrenar_modelo, evaluar_modelo, predict_label
 from flask import Flask, render_template, request
 ###########################################
 ## Evita problemas con la generación de imágenes en Flask
@@ -14,6 +17,9 @@ from LRModel import CalculateGrade
 import LogRep
 
 app = Flask(__name__)
+
+
+
 
 ###########################################
 # Rutas de la aplicación
@@ -51,6 +57,7 @@ def casoCuatro():
 @app.route('/regresionConceptos')
 def regresionConceptos():
     return render_template("rlconceptos.html")
+
 
 @app.route('/LogisConceptos')
 def LogisConceptos():
@@ -124,7 +131,7 @@ def Lc():
     # Entrenar modelo (siempre en cada request)
     model, scaler, x_test, y_test = LogRep.entrenar_modelo()
 
-    # Evaluar modelo y generar matriz de confusión (🔥 se genera en GET y POST)
+    # Evaluar modelo y generar matriz de confusión ( se genera en GET y POST)
     metrics = LogRep.evaluar_modelo(model, x_test, y_test, filename="static/images/confusion_matrix.png")
 
     if request.method == "POST":
@@ -137,7 +144,7 @@ def Lc():
         features = [horas, calorias, sexo, pantalla]
         result, prob = LogRep.Predecir(model, scaler, features)
 
-        # 🔄 Volvemos a evaluar después de predecir para regenerar matriz actualizada
+        #  Volvemos a evaluar después de predecir para regenerar matriz actualizada
         metrics = LogRep.evaluar_modelo(model, x_test, y_test, filename="static/images/confusion_matrix.png")
 
     return render_template(
@@ -147,3 +154,33 @@ def Lc():
         prob=prob,
         confusion_matrix=url_for('static', filename='images/confusion_matrix.png')
     )
+
+
+
+app = Flask(__name__)
+app.secret_key = 'unasecretkey'  
+
+ARTIFACTS = entrenar_modelo(csv_file='NaiveBayes.csv')
+
+METRICS = evaluar_modelo(ARTIFACTS)  
+
+@app.route('/naivebayes', methods=['GET'])
+def nb_page():
+    return render_template('NaiveBayes.html', metrics=METRICS)
+
+@app.route('/naivebayes/predict', methods=['POST'])
+def nb_predict():
+    mensaje = request.form.get('mensaje','')
+    prioridad = request.form.get('prioridad','Baja')
+    palabras_clave = request.form.get('palabras_clave','')
+    hora = request.form.get('hora','9')
+    threshold = request.form.get('threshold', None)
+    try:
+        result = predict_label(ARTIFACTS, mensaje, prioridad, palabras_clave, hora, threshold)
+        return render_template('NaiveBayes.html', metrics=METRICS, prediction=result)
+    except Exception as e:
+        flash('Error al predecir: ' + str(e))
+        return redirect(url_for('nb_page'))
+
+if __name__ == '__main__':
+    app.run(debug=True)
