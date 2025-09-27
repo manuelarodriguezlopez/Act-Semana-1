@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" /> 
+  <meta charset="UTF-8" /> 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
   <title>Casos de uso</title> 
   <link 
@@ -49,31 +49,106 @@
                   <li><a class="dropdown-item" href="/LR">Ejercicio práctico</a></li>
                 </ul>
               </li>
-                <li class="dropdown-submenu">
-                <a class="dropdown-item dropdown-toggle" href="#">Regresion Logistica</a>
+
+              <!-- Submenú Regresión Logística -->
+              <li class="dropdown-submenu">
+                <a class="dropdown-item dropdown-toggle" href="#">Regresión Logística</a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="/LogisConceptos">Conceptos básicos</a></li>
                   <li><a class="dropdown-item" href="/Lc">Ejercicio práctico</a></li>
                 </ul>
               </li>
-             <!-- Submenú Tipos de Algoritmos de Clasificación -->
-            <li class="dropdown-submenu">
-            <a class="dropdown-item dropdown-toggle" href="#">Tipos de Algoritmos de Clasificación</a>
+
+              <!-- Submenú Clasificación -->
+              <li class="dropdown-submenu">
+                <a class="dropdown-item dropdown-toggle" href="#">Tipos de Algoritmos de Clasificación</a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="/Practicos">Conceptos básicos</a></li>
                   <li><a class="dropdown-item" href="/naivebayes">Caso práctico</a></li>
                 </ul>
-            </li>
+              </li>
+            </ul> 
         </ul> 
       </div>
     </div>
   </nav>
-  <div class="container my-5">
-    <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" 
-    sandbox="allow-scripts allow-popups allow-forms allow-modals allow-same-origin" 
-    width="900" height="450" src="https://boardmix.com/app/share/CAE.CMOztQEgASoQn18D-DETrirg9WVeSJLzrTAGQAE/o9V33D" allowfullscreen>}
-  </iframe>
+
+  <!-- Acordeón -->
+  <div class="accordion my-5 container" id="accordionExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+          Mapa conceptual - Algoritmos de Clasificación
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <div class="text-center">
+            <iframe 
+              style="border: 1px solid rgba(0, 0, 0, 0.1);" 
+              sandbox="allow-scripts allow-popups allow-forms allow-modals allow-same-origin" 
+              width="900" height="450" 
+              src="https://boardmix.com/app/share/CAE.CMOztQEgASoQn18D-DETrirg9WVeSJLzrTAGQAE/o9V33D" 
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+  <!-- Fin Acordeón -->
+  <div>
+    <div class="accordion my-5 container">
+      <div clas="text-center">
+      <h2 class="accordion-header" id="headingTwo">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+         Explicacion Naive Bayes
+        </button>
+      </h2>
+       <div id="collapseTwo" class="accordion-collapse collapse  custom-bg" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+         <p><strong>El teorema de bayes</strong>
+        Este teorema describe como actualizar la probabilidad de un evento en funcion de la evidencia que se pueda recopilar
+        fue formulado por el revrendo <strong>Thomas Bayes(1701-1761)</strong> este fue publicado en un manuscrito
+        llamado "An Essay towards solving a Problem in the Doctrine of Chances", publicado por su amigo Richard Price
+        en 1763, dos años despues de la muerte de Bayes.
+        <strong><a href="https://academic.oup.com/biomet/article-abstract/45/3-4/293/234093?redirectedFrom=fulltext&login=false">(Bayes & Price, 1763/1958)</strong></a>
+        </p> 
+        <p>
+
+          <strong>Cualidades del clasificador Naive Bayes</strong>
+        </p>
+        <p>
+          <strong>Su eficiencia y usos</strong>
+          El clasificador Naive Bayes es conocido por su eficiencia en términos de tiempo de entrenamiento y predicción. Esto se debe a su simplicidad y a la suposición de
+          independencia entre las características, lo que permite un cálculo rápido de las probabilidades.
+          
+          Este tipo de clasificacion tiene la peculiaridad que puede filtar por probabilidad cosas por ejemplo 
+          el correo no deseado (spam) en los sistemas de filtrado de correo electrónico.
+          <a href="https://medium.com/data-science/na%C3%AFve-bayes-spam-filter-from-scratch-12970ad3dae7">
+          <strong>(Mark Garvey, 2020)</strong></a>
+        </p>
+        <p>
+          El clasificador Naive Bayes también ha mostrado gran eficacia en el filtrado de mensajes de texto,
+           logrando altos niveles de precisión al identificar mensajes no deseados.
+           En un estudio reciente, el algoritmo alcanzó un 92% de exactitud en la clasificación de SMS como spam o no spam,
+           lo que demuestra su capacidad para realizar predicciones rápidas y confiables en aplicaciones del mundo real.
+          <a href="https://arxiv.org/pdf/cs/0006013.pdf"><strong>(Androutsopoulos, Koutsias, Chandrinos, Paliouras & Spyropoulos, 2000)</strong></a>
+        </p>
+        <p>
+          <strong>Simplicidad</strong>
+        </p>
+        <p>
+          Además, estudios comparativos posteriores señalan que Naive Bayes sigue siendo popular por su simplicidad y 
+          baja complejidad computacional, con rendimiento a menudo comparable al de métodos más complejos
+         en tareas de filtrado de spam.
+        <a href="https://www2.aueb.gr/users/ion/docs/ceas2006_paper.pdf"><strong>(Metsis, Androutsopoulos & Paliouras, 2006)</strong></a>.
+        </p>
+        </div>
+      </div>
+  </div>
+  </div>
+
   <style>
     body {
       background: url("{{ url_for('static', filename='RL.jpg') }}") no-repeat center center fixed;
@@ -96,6 +171,10 @@
     .accordion-body {
       color: #212529;
     }
+    .custom-bg {
+        background: #ffffff !important; 
+        color: #fff !important;
+      }
     .navbar{ background-color: black; }
     .dropdown-menu { background-color: #212529; }
     .dropdown-item { color: #fff; }
@@ -104,6 +183,7 @@
     .dropdown-submenu > .dropdown-menu{ display:none; top:0; left:100%; margin-top: 3px; }
     .dropdown-submenu:hover > .dropdown-menu { display: block; }
   </style>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
   integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
   crossorigin="anonymous"></script>
