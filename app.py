@@ -146,12 +146,29 @@ def Lc():
 ###########################################
 # NAIVE BAYES 
 ###########################################
-@app.route("/naivebayes")
+@app.route("/naivebayes", methods=["GET", "POST"])
 def naive_bayes():
     resultados = Naivebayes.entrenar_y_graficar("naivebayes.csv")
+    prediccion = probabilidad = interpretacion = None
+
+    if request.method == "POST":
+        mensaje = request.form["mensaje"]
+        prioridad = request.form["prioridad"]
+        palabras_clave = request.form["palabras_clave"]
+        hora = float(request.form["hora"])
+        threshold = float(request.form.get("threshold", 0.5))
+        pred = Naivebayes.predecir("naivebayes.csv", mensaje, prioridad, palabras_clave, hora, threshold)
+        prediccion = pred["prediccion"]
+        probabilidad = pred["probabilidad"]
+        interpretacion = pred["interpretacion"]
+
     return render_template("NaiveBayes.html",
                            accuracy=resultados["accuracy"],
-                           image=resultados["image"])
+                           image=resultados["image"],
+                           prediccion=prediccion,
+                           probabilidad=probabilidad,
+                           interpretacion=interpretacion)
+
 @app.route("/Practicos")
 def Practicos():
     return render_template("AlgoritClas.html")
